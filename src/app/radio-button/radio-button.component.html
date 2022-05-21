@@ -1,0 +1,23 @@
+<h1 class="mat-display-1">Radio button</h1>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Radio button colors</mat-card-title>
+    <mat-card-content>
+
+      <mat-radio-group *ngFor="let c of allColors" [name]="c">
+        <mat-radio-button
+          checked
+          [color]="$any(c)"
+          [attr.color]="c">{{ c | titlecase }} checkbox</mat-radio-button>
+        <mat-radio-button
+          [value]="false"
+          [color]="$any(c)"
+          [attr.color]="c">{{ c | titlecase }} checkbox</mat-radio-button>
+      </mat-radio-group>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

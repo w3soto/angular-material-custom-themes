@@ -1,0 +1,23 @@
+<h1 class="mat-display-1">Slider</h1>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Slider colors</mat-card-title>
+    <mat-card-content>
+
+      <mat-slider
+        *ngFor="let c of allColors"
+        thumbLabel
+        vertical
+        step="1"
+        value="50"
+        min="0"
+        max="100"
+        aria-label="units"
+        [color]="c"></mat-slider>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

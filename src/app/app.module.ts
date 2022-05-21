@@ -7,7 +7,6 @@ import { MaterialModule } from "./material/material.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from "./forms/forms.module";
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ButtonComponent } from "./button/button.component";
 import { BadgeComponent } from "./badge/badge.component";
@@ -18,6 +17,11 @@ import { ListComponent } from './list/list.component';
 import { TypographyComponent } from "./typography/typography.component";
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { FormFieldComponent } from './form-field/form-field.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { RadioButtonComponent } from './radio-button/radio-button.component';
+import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 
@@ -32,18 +36,20 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     ListComponent,
     TypographyComponent,
     ProgressSpinnerComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    FormFieldComponent,
+    CheckboxComponent,
+    RadioButtonComponent,
+    SlideToggleComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     ReactiveFormsModule,
     MaterialModule,
 
     AppRoutingModule,
-
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
