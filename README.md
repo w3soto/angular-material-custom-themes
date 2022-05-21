@@ -1,6 +1,16 @@
 # Angular Material Custom Theme
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
+Custom Angular Material themes (dark & light)
+
+* Arc light/dark
+* Transparent light/dark
+
+## Features
+* More colors (secondary, info, success, caution)
+* Dense variants
+
+## TODO
+* Add compact variants
 
 ## Background colors
 
@@ -15,6 +25,7 @@ $mat-theme-background: (
   // .mat-option
   // .mat-list-option
   // .mat-list-item
+  // .mat-menu-item
   // .mat-step-header
   // .mat-expansion-panel
   hover:                    $light-bg-alpha-4,
