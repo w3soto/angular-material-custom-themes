@@ -32,13 +32,13 @@
             ],
             "styles": [
               {
-                "input": "src/themes/frest/light.scss",
-                "bundleName": "frest-light-theme",
+                "input": "src/themes/arc/arc-light.theme.scss",
+                "bundleName": "arc-light-theme",
                 "inject": true
               },
               {
-                "input": "src/themes/frest/dark.scss",
-                "bundleName": "frest-dark-theme",
+                "input": "src/themes/arc/arc-dark.theme.scss",
+                "bundleName": "arc-dark-theme",
                 "inject": false
               },
               {

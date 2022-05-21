@@ -56,14 +56,12 @@
 
 @mixin density($theme) {
 
-  $dense-size: 22px; // size of default badge
-  $dense-font-size: 14px;
+  $dense-size: 24px;
   $dense-icon-size: 16px;
 
   .mat-chip.mat-standard-chip[dense] {
     min-height: $dense-size;
     line-height: 1em;
-    font-size: $dense-font-size;
     .mat-chip-avatar {
       width: $dense-icon-size;
       height: $dense-icon-size;
@@ -71,7 +69,7 @@
       margin-left: 4px;
     }
     &.mat-chip-with-trailing-icon {
-      padding-right: 2px;
+      padding-right: 3px;
     }
   }
 

@@ -7,33 +7,28 @@ import { SpinnersComponent } from "./spinners/spinners/spinners.component";
 import { ButtonToggleComponent } from "./button-toggle/button-toggle.component";
 import { ButtonComponent } from "./button/button.component";
 import { ChipComponent } from "./chip/chip.component";
+import { MenuComponent } from "./menu/menu.component";
+import { ListComponent } from "./list/list.component";
 
 const routes: Routes = [
-  {
-    path: 'badge', component: BadgeComponent
-  },
-  {
-    path: 'button', component: ButtonComponent
-  },
-  {
-    path: 'button-toggle', component: ButtonToggleComponent
-  },
-  {
-    path: 'chip', component: ChipComponent
-  },
-  {
-    path: 'forms', component: FormsComponent
-  },
-  {
-    path: 'spinners', component: SpinnersComponent
-  },
-  {
-    path: 'typography', component: TypographyComponent
-  }
+  {path: '', redirectTo: 'badge', pathMatch: 'full'},
+  // home
+  {path: 'badge', component: BadgeComponent},
+  {path: 'button', component: ButtonComponent},
+  {path: 'button-toggle', component: ButtonToggleComponent},
+  {path: 'chip', component: ChipComponent},
+  {path: 'forms', component: FormsComponent},
+  {path: 'list', component: ListComponent},
+  {path: 'menu', component: MenuComponent},
+  {path: 'spinners', component: SpinnersComponent},
+  {path: 'typography', component: TypographyComponent},
+  // home
+  {path: '**', redirectTo: 'badge'}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

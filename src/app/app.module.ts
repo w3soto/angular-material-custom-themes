@@ -15,6 +15,8 @@ import { ButtonComponent } from "./button/button.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ChipComponent } from './chip/chip.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { MenuComponent } from './menu/menu.component';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -24,7 +26,9 @@ import { ReactiveFormsModule } from "@angular/forms";
     BadgeComponent,
     ButtonComponent,
     ButtonToggleComponent,
-    ChipComponent
+    ChipComponent,
+    MenuComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

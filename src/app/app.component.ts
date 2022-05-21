@@ -15,8 +15,8 @@ export interface Theme {
 export class AppComponent implements OnInit {
 
   themes: Theme[] = [
-    {name: 'Frest light', className: 'frest-light', source: 'frest-light-theme.css'},
-    {name: 'Frest dark', className: 'frest-dark', source: 'frest-dark-theme.css'},
+    {name: 'Arc light', className: 'arc-light', source: 'arc-light-theme.css'},
+    {name: 'Arc dark', className: 'arc-dark', source: 'arc-dark-theme.css'},
     {name: 'Transparent light', className: 'transparent-light', source: 'transparent-light-theme.css'},
     {name: 'Transparent dark', className: 'transparent-dark', source: 'transparent-dark-theme.css'}
   ];

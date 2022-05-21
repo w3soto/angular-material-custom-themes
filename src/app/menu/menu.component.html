@@ -1,0 +1,53 @@
+<h1 class="mat-display-1">Menu</h1>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Menu</mat-card-title>
+    <mat-card-content>
+
+      <button mat-flat-button color="primary" [matMenuTriggerFor]="menu1">Open menu <mat-icon>expand_more</mat-icon></button>
+
+      <mat-menu #menu1="matMenu" xPosition="before">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Dense</mat-card-title>
+    <mat-card-content>
+
+      <button mat-flat-button color="info" [matMenuTriggerFor]="menu2" dense>Open dense menu <mat-icon>expand_more</mat-icon></button>
+
+      <mat-menu #menu2="matMenu" xPosition="before">
+        <button mat-menu-item dense>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item dense disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item dense>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

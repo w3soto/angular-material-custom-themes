@@ -1,0 +1,70 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $config: theming.get-color-config($theme);
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+  //.mat-badge {
+  //
+  //  @each $key, $palette in $palettes {
+  //
+  //    $contrast: map.get($palette, contrast);
+  //
+  //    &[color=#{$key}],
+  //    &-#{$key} {
+  //      .mat-badge-content {
+  //        background-color: map.get($palette, main);
+  //        @if $contrast {
+  //          color: map.get($contrast, main);
+  //        }
+  //      }
+  //    }
+  //  }
+  //
+  //}
+
+}
+
+
+@mixin typography($theme) {
+
+}
+
+
+@mixin density($theme) {
+
+  $dense-size: 40px;
+  $dense-icon-size: 20px;
+
+  // remove top/bottom paddings
+  .mat-menu-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .mat-menu-item[dense] {
+    height: $dense-size;
+    line-height: $dense-size;
+    .mat-icon {
+      height: $dense-icon-size;
+      width: $dense-icon-size;
+      font-size: $dense-icon-size;
+      line-height: $dense-icon-size;
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+  @include density($theme);
+}

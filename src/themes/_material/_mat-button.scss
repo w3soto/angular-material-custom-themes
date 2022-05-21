@@ -59,15 +59,25 @@
 
 
 @mixin typography($theme) {
+}
+
+
+@mixin density($theme) {
+
+  $standard-size: 40px;
+
+  $dense-size: 32px;
+  $dense-icon-size: 20px;
+
+  $compact-size: 32px;
+  $compact-icon-size: 16px;
 
   .mat-button,
   .mat-raised-button,
   .mat-stroked-button,
   .mat-flat-button {
     min-width: 2em;
-    line-height: 40px;
-    //  padding: 0 1.15em;
-    //  margin: 0 .65em;
+    line-height: $standard-size;
     .mat-button-wrapper {
       display: flex;
       justify-content: center;
@@ -77,16 +87,8 @@
   }
 
   .mat-stroked-button {
-    line-height: 38px;
+    line-height: $standard-size - 2px; // top/bottom border
   }
-
-}
-
-
-@mixin density($theme) {
-
-  $dense-size: 28px;
-  $dense-icon-size: 14px;
 
   .mat-button,
   .mat-raised-button,

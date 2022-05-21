@@ -85,7 +85,7 @@ $theme: (
   )
 );
 
-.frest-dark {
+.arc-dark {
   @include mat.all-component-themes($theme);
   @include customTheme.theme($theme);
 }

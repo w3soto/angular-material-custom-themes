@@ -132,11 +132,11 @@
 
 @mixin density($theme) {
 
-  $dense-size: 28px;
+  $dense-size: 32px;
   $dense-icon-size: 16px;
 
   .mat-button-toggle-group[dense]  .mat-button-toggle-label-content {
-    line-height: 28px;
+    line-height: $dense-size;
     .mat-icon {
       height: $dense-icon-size;
       width: $dense-icon-size;
@@ -145,7 +145,7 @@
     }
   }
   .mat-button-toggle-appearance-standard[dense] .mat-button-toggle-label-content {
-    line-height: 26px;
+    line-height: $dense-size - 2px; // top/bottom border
     .mat-icon {
       height: $dense-icon-size;
       width: $dense-icon-size;

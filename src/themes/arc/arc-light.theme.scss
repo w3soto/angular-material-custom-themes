@@ -89,7 +89,7 @@ $theme: (
   )
 );
 
-.frest-light {
+.arc-light {
   @include mat.all-component-themes($theme);
   @include customTheme.theme($theme);
 }
