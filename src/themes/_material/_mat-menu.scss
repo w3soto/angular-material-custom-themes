@@ -16,7 +16,7 @@
   $dense-icon-size: 20px;
 
   // remove top/bottom paddings
-  .mat-menu-content {
+  .mat-menu-content:not(:empty) {
     padding-top: 0;
     padding-bottom: 0;
   }
