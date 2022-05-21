@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TypographyComponent } from "./typography/typography/typography.component";
+import { TypographyComponent } from "./typography/typography.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { FormsComponent } from "./forms/forms/forms.component";
 import { SpinnersComponent } from "./spinners/spinners/spinners.component";
