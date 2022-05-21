@@ -1,0 +1,30 @@
+<h1 class="mat-display-1">Progress bar</h1>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Progress bar</mat-card-title>
+    <mat-card-content>
+
+      <mat-progress-bar
+        *ngFor="let c of allColors"
+        mode="determinate"
+        value="66"
+        [color]="c"></mat-progress-bar>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Progress animated bar</mat-card-title>
+    <mat-card-content>
+
+      <mat-progress-bar
+        *ngFor="let c of allColors"
+        mode="indeterminate"
+        [color]="c"></mat-progress-bar>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

@@ -1,0 +1,29 @@
+<h1 class="mat-display-1">Progress spinner</h1>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Progress spinner</mat-card-title>
+    <mat-card-content>
+
+      <mat-spinner
+        *ngFor="let c of allColors; let i = index;"
+        mode="determinate"
+        [value]="66"
+        [color]="c" diameter="48"></mat-spinner>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Progress animated spinner</mat-card-title>
+    <mat-card-content>
+
+      <mat-spinner
+        *ngFor="let c of allColors"
+        [color]="c" diameter="48"></mat-spinner>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

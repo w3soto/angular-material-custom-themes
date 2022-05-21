@@ -17,12 +17,11 @@
 @mixin color($theme) {
 
   $config: theming.get-color-config($theme);
-  $background: map.get($config, background);
+  $background: map.get(map.get($config, background), background);
 
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-progress-bar {
-
     @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {

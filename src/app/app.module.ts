@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from "./forms/forms.module";
-import { SpinnersModule } from "./spinners/spinners.module";
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ButtonComponent } from "./button/button.component";
 import { BadgeComponent } from "./badge/badge.component";
@@ -17,6 +16,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MenuComponent } from './menu/menu.component';
 import { ListComponent } from './list/list.component';
 import { TypographyComponent } from "./typography/typography.component";
+import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 
 
@@ -29,7 +30,9 @@ import { TypographyComponent } from "./typography/typography.component";
     ChipComponent,
     MenuComponent,
     ListComponent,
-    TypographyComponent
+    TypographyComponent,
+    ProgressSpinnerComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +43,7 @@ import { TypographyComponent } from "./typography/typography.component";
 
     AppRoutingModule,
 
-    FormsModule,
-    SpinnersModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

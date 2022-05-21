@@ -1,0 +1,18 @@
+:host {
+
+  display: flex;
+  flex-direction: column;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mat-card-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+}

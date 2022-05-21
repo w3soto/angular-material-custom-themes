@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpinnersComponent } from './spinners.component';
+import { ProgressBarComponent } from './progress-bar.component';
 
-describe('SpinnersComponent', () => {
-  let component: SpinnersComponent;
-  let fixture: ComponentFixture<SpinnersComponent>;
+describe('ProgressBarComponent', () => {
+  let component: ProgressBarComponent;
+  let fixture: ComponentFixture<ProgressBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpinnersComponent ]
+      declarations: [ ProgressBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpinnersComponent);
+    fixture = TestBed.createComponent(ProgressBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

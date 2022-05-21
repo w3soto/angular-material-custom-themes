@@ -2,21 +2,17 @@
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
 
-  .mat-card-title {
-    margin-bottom: 24px;
-  }
-
-  .flex-row {
-    display: flex;
-    gap: 24px;
-  }
-
-  .flex-col {
+  section {
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  .mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
 }
