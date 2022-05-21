@@ -28,5 +28,5 @@ $theme-typography: (
 
   button: mat.define-typography-level(14px, 14px, 500, 'Roboto', 0.0893em),
   caption: mat.define-typography-level(12px, 20px, 400, 'Roboto', 0.0333em),
-  input: mat.define-typography-level(inherit, 1.125, 400, 'Roboto', 0.0179em)
+  input: mat.define-typography-level(14px, 1.125, 400, 'Roboto', 0.0179em)
 );

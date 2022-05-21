@@ -87,6 +87,14 @@
   $config: theming.get-typography-config($theme);
   $base-input-font-size: map.get(map.get($config, input), font-size);
 
+  .mat-form-field .mat-form-field-flex {
+    gap: 4px;
+  }
+
+  .mat-form-field {
+    @include _custom-mat-form-field-density($base-input-font-size, $base-input-font-size);
+  }
+
   // ~40px with 14px base input size
   .mat-form-field[dense] {
     @include _custom-mat-form-field-density(9.7px, $base-input-font-size);
