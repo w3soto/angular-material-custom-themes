@@ -1,0 +1,156 @@
+<h1 class="mat-display-1">Forms</h1>
+
+<section [formGroup]="form">
+
+  <mat-card>
+
+    <mat-card-title>Outline</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Default required input</mat-label>
+        <input matInput formControlName="textRequired">
+        <mat-error>Some error message</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Default input</mat-label>
+        <input matInput formControlName="text">
+        <mat-hint>Lorem ipsum dolor</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Default input</mat-label>
+        <input matInput formControlName="text">
+        <mat-icon matPrefix>shopping_cart</mat-icon>
+        <mat-icon matSuffix>done</mat-icon>
+        <mat-hint>Lorem ipsum dolor</mat-hint>
+      </mat-form-field>
+
+      <!--    <mat-form-field appearance="fill">-->
+      <!--      <mat-label>Basic fill input</mat-label>-->
+      <!--      <input matInput formControlName="text">-->
+      <!--    </mat-form-field>-->
+
+      <!--    <mat-form-field appearance="standard">-->
+      <!--      <mat-label>Basic standard input</mat-label>-->
+      <!--      <input matInput formControlName="text">-->
+      <!--    </mat-form-field>-->
+
+      <!--    <div class="row">-->
+
+      <!--      <div class="col">-->
+      <!--        <mat-slider-->
+      <!--          *ngFor="let c of allColors"-->
+      <!--          thumbLabel-->
+      <!--          step="1"-->
+      <!--          value="50"-->
+      <!--          min="0"-->
+      <!--          max="100"-->
+      <!--          aria-label="units"-->
+      <!--          [color]="c"></mat-slider>-->
+      <!--      </div>-->
+
+      <!--      <div class="col">-->
+      <!--        <mat-form-field appearance="fill">-->
+      <!--          <mat-label>Favorite food</mat-label>-->
+      <!--          <mat-select>-->
+      <!--            <mat-option *ngFor="let food of foods" [value]="food.value">-->
+      <!--              {{food.viewValue}}-->
+      <!--            </mat-option>-->
+      <!--          </mat-select>-->
+      <!--        </mat-form-field>-->
+
+      <!--        <mat-form-field appearance="fill">-->
+      <!--          <mat-label>Choose a date</mat-label>-->
+      <!--          <input matInput [matDatepicker]="picker">-->
+      <!--          <mat-hint>MM/DD/YYYY</mat-hint>-->
+      <!--          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+      <!--          <mat-datepicker #picker></mat-datepicker>-->
+      <!--        </mat-form-field>-->
+
+      <!--      </div>-->
+
+      <!--      <div class="col">-->
+      <!--        <mat-slide-toggle-->
+      <!--          *ngFor="let c of allColors"-->
+      <!--          checked-->
+      <!--          [color]="c">Slide {{ c | titlecase }}</mat-slide-toggle>-->
+      <!--      </div>-->
+
+      <!--      <div class="col">-->
+      <!--        <mat-checkbox-->
+      <!--          *ngFor="let c of allColors"-->
+      <!--          checked-->
+      <!--          [color]="c"-->
+      <!--          checked>{{ c | titlecase }} checkbox</mat-checkbox>-->
+      <!--      </div>-->
+
+      <!--      <div class="col">-->
+      <!--        <mat-radio-button-->
+      <!--          *ngFor="let c of allColors"-->
+      <!--          value="c"-->
+      <!--          [color]="$any(c)"-->
+      <!--          [attr.color]="c" checked>{{ c | titlecase }} radio</mat-radio-button>-->
+      <!--      </div>-->
+
+      <!--    </div>-->
+
+
+    </mat-card-content>
+
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Fill</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Default required input</mat-label>
+        <input matInput formControlName="textRequired">
+        <mat-error>Some error message</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Default input</mat-label>
+        <input matInput formControlName="text">
+        <mat-hint>Lorem ipsum dolor</mat-hint>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Standard</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="standard">
+        <mat-label>Default required input</mat-label>
+        <input matInput formControlName="textRequired">
+        <mat-error>Some error message</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Default input</mat-label>
+        <input matInput formControlName="text">
+        <mat-hint>Lorem ipsum dolor</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Default input</mat-label>
+        <input matInput formControlName="text">
+        <mat-icon matPrefix>shopping_cart</mat-icon>
+        <mat-icon matSuffix>done</mat-icon>
+        <mat-hint>Lorem ipsum dolor</mat-hint>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Legacy</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="legacy">
+        <mat-label>Default required input</mat-label>
+        <input matInput formControlName="textRequired">
+        <mat-error>Some error message</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Default input</mat-label>
+        <input matInput formControlName="text">
+        <mat-hint>Lorem ipsum dolor</mat-hint>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+</section>

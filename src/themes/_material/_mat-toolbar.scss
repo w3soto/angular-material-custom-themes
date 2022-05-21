@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+  .mat-toolbar {
+    @each $key, $palette in $palettes {
+      $contrast: map.get($palette, contrast);
+      &.mat-#{$key} {
+        background-color: map.get($palette, main);
+        @if $contrast {
+          color: map.get($contrast, main);
+        }
+      }
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+}

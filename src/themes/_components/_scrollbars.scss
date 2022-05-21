@@ -1,0 +1,45 @@
+///////////////////////////////////////////////////////////////////////////////
+// SCROLLBARS
+///////////////////////////////////////////////////////////////////////////////
+
+$track-color: rgba(255,255,255,.1);
+$thumb-color: rgba(255,255,255,.25);
+$thin-width: 6px;
+$auto-width: 12px;
+
+// firefox
+* {
+  scrollbar-color: $thumb-color $track-color;
+  scrollbar-width: thin;
+}
+// chrome
+*::-webkit-scrollbar {
+  width: $auto-width;
+  height: $auto-width;
+}
+*::-webkit-scrollbar-track {
+  background-color: $track-color;
+  border-radius: 0px;
+}
+*::-webkit-scrollbar-thumb {
+  background: $thumb-color;
+  border-radius: 0px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: $thumb-color;
+}
+
+//body,
+//.mat-sidenav,
+//.mat-sidenav-content,
+//[class^=ag-] {
+//  scrollbar-width: auto !important;
+//  &::-webkit-scrollbar {
+//    width: $auto-width;
+//    height: $auto-width;
+//  }
+//  &::-webkit-scrollbar-thumb {
+//    background: $thumb-color;
+//    border-radius: 0px;
+//  }
+//}

@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+  $config: theming.get-color-config($theme);
+  $is-dark-theme: map.get($config, is-dark);
+
+  .mat-drawer-backdrop.mat-drawer-shown {
+    @if $is-dark-theme {
+      background-color: rgba(0, 0, 0, .48);
+    } @else {
+      background-color: rgba(255, 255, 255, .48);
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+}

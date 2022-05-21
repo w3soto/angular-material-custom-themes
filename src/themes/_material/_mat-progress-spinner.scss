@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+  .mat-progress-spinner,
+  .mat-spinner {
+    @each $key, $palette in $palettes {
+      &[color=#{$key}],
+      &.mat-#{$key} circle {
+        stroke: theming.get-color-from-palette($palette);
+      }
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+}

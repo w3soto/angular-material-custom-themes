@@ -1,0 +1,32 @@
+:host {
+
+  display: flex;
+  flex-direction: column;
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .mat-card-title {
+    margin-bottom: 24px;
+  }
+
+  .mat-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+}

@@ -1,0 +1,165 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '@angular/material' as theming;
+
+
+@mixin _button-color($palette) {
+
+  $contrast: map.get($palette, contrast);
+
+  color: map.get($palette, main);
+  .mat-button-toggle-button {
+    color: map.get($palette, main);
+  }
+  // focus
+  .mat-button-toggle-focus-overlay {
+    background-color: map.get($palette, main);
+  }
+
+  &.mat-button-toggle-checked {
+    .mat-button-toggle-button {
+      color: map.get($contrast, main);
+      background-color: map.get($palette, main);
+    }
+  }
+
+}
+
+
+@mixin color($theme) {
+
+  $config: theming.get-color-config($theme);
+  $background: map.get($config, background);
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+  $custom-palettes: theming.get-color-config($custom-colors);
+
+  .mat-button-toggle-standalone,
+  .mat-button-toggle-group {
+
+    background: theming.get-color-from-palette($background, card);
+
+    &[color=primary],
+    &.mat-primary {
+      .mat-button-toggle:not([color]):not([disabled]) {
+        @include _button-color($primary)
+      }
+    }
+    &[color=accent],
+    &.mat-accent {
+      .mat-button-toggle:not([color]):not([disabled]) {
+        @include _button-color($accent)
+      }
+    }
+    &[color=warn],
+    &.mat-warn {
+      .mat-button-toggle:not([color]):not([disabled]) {
+        @include _button-color($warn)
+      }
+    }
+
+    @each $key, $palette in $custom-palettes {
+      &[color=#{$key}],
+      &.mat-#{$key} {
+        .mat-button-toggle:not([color]):not([disabled]) {
+          @include _button-color($palette)
+        }
+      }
+    }
+
+  }
+
+  .mat-button-toggle {
+
+    &.mat-button-toggle-checked {
+      background: theming.get-color-from-palette($background, selected-button);
+    }
+
+    &[color=primary],
+    &.mat-primary {
+      @include _button-color($primary);
+    }
+    &[color=accent],
+    &.mat-accent {
+      @include _button-color($accent)
+    }
+    &[color=warn],
+    &.mat-warn {
+      @include _button-color($warn)
+    }
+  }
+
+  .mat-button-toggle {
+    @each $key, $palette in $custom-palettes {
+      &[color=#{$key}],
+      &.mat-#{$key} {
+        @include _button-color($palette)
+      }
+    }
+  }
+
+  .mat-button-toggle-disabled {
+    background-color: theming.get-color-from-palette($background, disabled-button-toggle);
+    &.mat-button-toggle-appearance-standard {
+      background-color: theming.get-color-from-palette($background, disabled-button-toggle);
+    }
+    &.mat-button-toggle-checked {
+      background-color: theming.get-color-from-palette($background, selected-disabled-button);
+    }
+  }
+
+}
+
+
+@mixin typography($theme) {
+  .mat-button-toggle-label-content {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .mat-button-toggle-group .mat-button-toggle-label-content {
+    line-height: 40px;
+  }
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 38px;
+  }
+}
+
+
+@mixin density($theme) {
+
+  $dense-size: 28px;
+  $dense-icon-size: 16px;
+
+  .mat-button-toggle-group[dense]  .mat-button-toggle-label-content {
+    line-height: 28px;
+    .mat-icon {
+      height: $dense-icon-size;
+      width: $dense-icon-size;
+      font-size: $dense-icon-size;
+      line-height: $dense-icon-size;
+    }
+  }
+  .mat-button-toggle-appearance-standard[dense] .mat-button-toggle-label-content {
+    line-height: 26px;
+    .mat-icon {
+      height: $dense-icon-size;
+      width: $dense-icon-size;
+      font-size: $dense-icon-size;
+      line-height: $dense-icon-size;
+    }
+  }
+
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+  @include density($theme);
+}

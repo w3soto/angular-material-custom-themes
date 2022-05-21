@@ -1,0 +1,54 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $config: theming.get-color-config($theme);
+  $is-dark-theme: map.get($config, is-dark);
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+  .mat-card:not([class*=mat-elevation-z]) {
+    @if $is-dark-theme {
+      box-shadow: 0 2px 14px rgba(0 0 0 / 16%);
+    }
+    @else {
+      box-shadow: 0 2px 14px rgb(0 0 0 / 8%);
+    }
+  }
+
+}
+
+
+@mixin typography($theme) {
+
+  $config: theming.get-typography-config($theme);
+
+  .mat-card > .mat-card-title {
+    margin-bottom: 24px;
+  }
+
+  .mat-card .mat-card-header-text {
+    margin: 0 0 12px;
+    .mat-card-title {
+      margin-bottom: 12px;
+    }
+    .mat-card-subtitle {
+      margin-bottom: 12px;
+    }
+  }
+
+  .mat-card .mat-card-subtitle {
+    font-weight: 500;
+  }
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+}

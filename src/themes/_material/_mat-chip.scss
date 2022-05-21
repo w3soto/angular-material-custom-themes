@@ -1,0 +1,84 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $config: theming.get-color-config($theme);
+  $is-dark-theme: map.get($config, is-dark);
+
+  $primary: map.get($config, primary);
+  $primary-contrast: map.get($primary, contrast);
+
+  $accent: map.get($config, accent);
+  $accent-contrast: map.get($accent, contrast);
+
+  $warn: map.get($config, warn);
+  $warn-contrast: map.get($warn, contrast);
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $custom-palettes: theming.get-color-config($custom-colors);
+
+  .mat-form-field .mat-chip.mat-standard-chip {
+    &[color=primary],
+    &.mat-primary {
+      color: map.get($primary-contrast, main);
+      background-color: theming.get-color-from-palette($primary);
+    }
+    &[color=accent],
+    &.mat-accent {
+      color: map.get($accent-contrast, main);
+      background-color: theming.get-color-from-palette($accent);
+    }
+    &[color=warn],
+    &.mat-warn {
+      color: map.get($warn-contrast, main);
+      background-color: theming.get-color-from-palette($warn);
+    }
+  }
+
+  .mat-form-field .mat-chip.mat-standard-chip,
+  .mat-chip.mat-standard-chip.mat-chip-selected {
+    @each $key, $palette in $custom-palettes {
+      $contrast: map.get($palette, contrast);
+      &[color=#{$key}],
+      &.mat-#{$key} {
+        color: map.get($contrast, main);
+        background-color: theming.get-color-from-palette($palette);
+      }
+    }
+  }
+
+}
+
+
+@mixin density($theme) {
+
+  $dense-size: 22px; // size of default badge
+  $dense-font-size: 14px;
+  $dense-icon-size: 16px;
+
+  .mat-chip.mat-standard-chip[dense] {
+    min-height: $dense-size;
+    line-height: 1em;
+    font-size: $dense-font-size;
+    .mat-chip-avatar {
+      width: $dense-icon-size;
+      height: $dense-icon-size;
+      margin-right: 8px;
+      margin-left: 4px;
+    }
+    &.mat-chip-with-trailing-icon {
+      padding-right: 2px;
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include density($theme);
+}

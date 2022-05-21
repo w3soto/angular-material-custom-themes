@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+  .mat-radio-button {
+    @each $key, $palette in $palettes {
+      &[color=#{$key}],
+      &.mat-#{$key} {
+        &.mat-radio-checked .mat-radio-outer-circle {
+          border-color: map.get($palette, main) !important;
+        }
+        .mat-radio-inner-circle,
+        .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+        &.mat-radio-checked .mat-radio-persistent-ripple,
+        &:active .mat-radio-persistent-ripple {
+          background-color: map.get($palette, main) !important;
+        }
+      }
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+}
+

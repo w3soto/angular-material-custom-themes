@@ -1,0 +1,52 @@
+
+
+<mat-toolbar class="header mat-elevation-z5">
+  <button mat-icon-button aria-label="Menu" (click)="toggleLeftMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Custom Theme ({{ theme?.name }})</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+    <mat-icon>format_color_fill</mat-icon>
+
+    <mat-menu #themeMenu="matMenu">
+      <button *ngFor="let t of themes" mat-menu-item (click)="selectTheme(t)">{{ t.name }}</button>
+    </mat-menu>
+
+  </button>
+  <button mat-icon-button aria-label="Settings" (click)="toggleRightMenu()">
+    <mat-icon>settings</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="body">
+
+  <mat-sidenav mode="side" [opened]="leftMenuOpened" class="left-menu">
+
+    <mat-nav-list>
+      <a mat-list-item matLine [routerLink]="['badge']">Badge</a>
+      <a mat-list-item matLine [routerLink]="['button']">Button</a>
+      <a mat-list-item matLine [routerLink]="['button-toggle']">Button toggle</a>
+      <a mat-list-item matLine [routerLink]="['chip']">Chip</a>
+      <a mat-list-item matLine [routerLink]="['forms']"><mat-icon mat-list-icon>fact_check</mat-icon>Forms</a>
+      <a mat-list-item matLine [routerLink]="['spinners']"><mat-icon mat-list-icon>sync</mat-icon>Spinners</a>
+      <a mat-list-item matLine [routerLink]="['typography']"><mat-icon mat-list-icon>text_fields</mat-icon>Typography</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav mode="over"[opened]="rightMenuOpened" position="end" class="right-menu">
+    SETTINGS
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

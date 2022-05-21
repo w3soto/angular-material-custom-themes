@@ -1,0 +1,91 @@
+
+@use '@angular/material' as mat;
+@use "../_material/theme" as customTheme;
+
+@import "colors";
+@import "typography";
+
+
+// Foreground Elements
+
+// Dark Theme text
+$light-text: white;
+$light-primary-text: $light-text;
+$light-accent-text: #a1b0cb;
+$light-disabled-text: rgba($light-accent-text, 0.5);
+$light-dividers: #546990;
+$light-focused: #546990;
+
+$mat-dark-theme-foreground: (
+  base:              black,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   $light-disabled-text,
+  disabled-text:     $light-disabled-text,
+  elevation:         black,
+  hint-text:         $light-accent-text,
+  secondary-text:    $light-accent-text,
+  accent-text:       $light-accent-text,
+  icon:              $light-accent-text,
+  icons:             $light-accent-text,
+  text:              $light-text,
+  slider-min:        $light-accent-text,
+  slider-off:        rgba($light-accent-text, 0.3),
+  slider-off-active: rgba($light-accent-text, 0.3),
+);
+
+// Dark bg
+$dark-background:     #1c222f;
+$dark-bg-lighter-5:   #283144; //lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  background:               $dark-background,
+  status-bar:               $dark-bg-lighter-20,
+  app-bar:                  $dark-bg-lighter-5,
+  hover:                    $light-bg-alpha-4,
+  card:                     $dark-bg-lighter-5,
+  dialog:                   $dark-bg-lighter-5,
+  tooltip:                  $dark-bg-lighter-20,
+  disabled-button:          $light-bg-alpha-12,
+  raised-button:            $dark-bg-lighter-5,
+  focused-button:           $light-focused,
+  selected-button:          $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle:   $dark-bg-lighter-10,
+  unselected-chip:          $dark-bg-lighter-20,
+  disabled-list-option:     $dark-bg-lighter-10,
+);
+
+// Compute font config
+@include mat.core($fontConfig);
+
+// Process theme
+$theme: (
+  primary: $theme-primary,
+  accent: $theme-accent,
+  warn: $theme-warn,
+  is-dark: true,
+  foreground: $mat-dark-theme-foreground,
+  background: $mat-dark-theme-background,
+  // custom config
+  custom: (
+    colors: (
+      secondary: $theme-secondary,
+      info: $theme-info,
+      success: $theme-success,
+      caution: $theme-caution
+    )
+  )
+);
+
+.frest-dark {
+  @include mat.all-component-themes($theme);
+  @include customTheme.theme($theme);
+}

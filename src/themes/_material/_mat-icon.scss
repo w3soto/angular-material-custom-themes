@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $custom-config: map.get($theme, custom);
+  $custom-colors: map.get($custom-config, colors);
+
+  $palettes: theming.get-color-config($custom-colors);
+
+}
+
+
+@mixin typography($theme) {
+  .material-icons {
+    font-size: 24px;
+    font-family: 'Material Icons', 'Material Icons';
+    .mat-badge-content {
+      font-family: 'Roboto';
+    }
+  }
+}
+
+
+@mixin theme($theme) {
+  @include typography($theme);
+  @include color($theme);
+}
