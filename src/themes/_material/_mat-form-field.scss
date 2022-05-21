@@ -1,0 +1,101 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '@angular/material' as theming;
+
+
+@mixin _custom-mat-form-field-density($font-size, $base-input-font-size: 16px) {
+
+  font-size: $font-size;
+
+  .mat-form-field-flex {
+    //max-height: 4em;
+    align-items: center !important;
+    //gap: calc($base-input-font-size * 0.25);
+  }
+
+  .mat-form-field-prefix,
+  .mat-form-field-suffix {
+    font-size: $base-input-font-size;
+    transform: translateY(-0.125em); // original: unset
+    .mat-icon-button {
+      width: 2.2em !important; // original: 2.4em
+      height: 2.2em !important; // original: 2.4em
+    }
+  }
+
+  .mat-datepicker-toggle,
+  .mat-select,
+  .mat-input-element,
+  .mat-form-field-label mat-label {
+    font-size: $base-input-font-size;
+  }
+  .mat-form-field-subscript-wrapper {
+    font-size: $base-input-font-size * .75; // original 75%
+  }
+
+  .mat-icon {
+    font-size: calc($base-input-font-size * 1.5); // original: 150%
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: calc($base-input-font-size * 1.34375); // original: 1.34375em
+  }
+
+  .mat-form-field-underline {
+    bottom: calc($base-input-font-size * 1.34375); // original: 1.34375em
+  }
+
+  &.mat-form-field-appearance-outline {
+    .mat-form-field-infix {
+      padding-top: 0.875em; // original: 1em
+      padding-bottom: 1.125em; // original: 1em
+    }
+    .mat-select-arrow-wrapper {
+      transform: translateY(0);
+    }
+    .mat-form-field-flex {
+      padding-left: calc($base-input-font-size * 0.75);
+      padding-right: calc($base-input-font-size * 0.75);
+    }
+  }
+
+  &.mat-form-field-appearance-fill {
+    .mat-form-field-infix {
+      padding-top: 0.375em; // original: 0.25em
+      padding-bottom: 0.625em; // original: 0.75em
+    }
+    .mat-form-field-flex {
+      //padding-top: 0.7em; // original: 0.75em
+      //padding-bottom: 0.05em; // original: 0
+      padding-left: calc($base-input-font-size * 0.75);
+      padding-right: calc($base-input-font-size * 0.75);
+    }
+  }
+}
+
+
+@mixin color($theme) {
+}
+
+
+@mixin typography($theme) {
+}
+
+
+@mixin density($theme) {
+
+  $config: theming.get-typography-config($theme);
+  $base-input-font-size: map.get(map.get($config, input), font-size);
+
+  // ~40px with 14px base input size
+  .mat-form-field[dense] {
+    @include _custom-mat-form-field-density(9.7px, $base-input-font-size);
+  }
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+  @include density($theme);
+}
