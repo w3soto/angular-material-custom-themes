@@ -4,13 +4,10 @@
 
 @mixin color($theme) {
 
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-
-  $palettes: theming.get-color-config($custom-colors);
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-toolbar {
-    @each $key, $palette in $palettes {
+    @each $key, $palette in $custom-palettes {
       $contrast: map.get($palette, contrast);
       &.mat-#{$key} {
         background-color: map.get($palette, main);

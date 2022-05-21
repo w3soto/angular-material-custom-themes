@@ -14,15 +14,12 @@
 
 @mixin color($theme) {
 
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-
-  $palettes: theming.get-color-config($custom-colors);
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-button,
   .mat-icon-button,
   .mat-stroked-button {
-    @each $key, $palette in $palettes {
+    @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {
         color: map.get($palette, main);
@@ -38,7 +35,7 @@
   .mat-flat-button,
   .mat-fab,
   .mat-mini-fab {
-    @each $key, $palette in $palettes {
+    @each $key, $palette in $custom-palettes {
       $contrast: map.get($palette, contrast);
       &[color=#{$key}],
       &.mat-#{$key} {

@@ -15,9 +15,7 @@
   $warn: map.get($config, warn);
   $warn-contrast: map.get($warn, contrast);
 
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-  $custom-palettes: theming.get-color-config($custom-colors);
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-checkbox-indeterminate,
   .mat-checkbox-checked {

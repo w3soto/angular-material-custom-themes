@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+//@use "@angular/material/core/style/list-common";
+//@use "@angular/material/core/typography/typography-utils";
+
+
+@mixin color($theme) {
+}
+
+
+@mixin typography($theme) {
+
+}
+
+
+@mixin density($theme) {
+
+  $config: theming.get-typography-config($theme);
+
+  $subheading2: map.get($config, subheading-2);
+  $body2: map.get($config, body-2);
+
+  .mat-list-item-content {
+    gap: 4px;
+  }
+
+  // Dense list
+  .mat-list-base[dense] {
+    .mat-list-item {
+      font-size: map.get($subheading2, font-size);
+    }
+    .mat-list-option {
+      font-size: map.get($subheading2, font-size);
+    }
+    .mat-subheader {
+      font-size: map.get($body2, font-size);
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+  @include density($theme);
+}

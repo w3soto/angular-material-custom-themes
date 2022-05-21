@@ -20,16 +20,13 @@
 
 @mixin color($theme) {
 
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-
-  $palettes: theming.get-color-config($custom-colors);
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   $thumb-checked-hue: default;
 
   .mat-slide-toggle {
 
-    @each $key, $palette in $palettes {
+    @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {
         @include _checked-color($palette, $thumb-checked-hue);

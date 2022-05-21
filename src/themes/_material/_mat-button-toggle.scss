@@ -34,9 +34,7 @@
   $accent: map.get($config, accent);
   $warn: map.get($config, warn);
 
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-  $custom-palettes: theming.get-color-config($custom-colors);
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-button-toggle-standalone,
   .mat-button-toggle-group {

@@ -3,12 +3,6 @@
 
 
 @mixin color($theme) {
-
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-
-  $palettes: theming.get-color-config($custom-colors);
-
 }
 
 

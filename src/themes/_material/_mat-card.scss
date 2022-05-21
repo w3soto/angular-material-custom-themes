@@ -7,11 +7,6 @@
   $config: theming.get-color-config($theme);
   $is-dark-theme: map.get($config, is-dark);
 
-  $custom-config: map.get($theme, custom);
-  $custom-colors: map.get($custom-config, colors);
-
-  $palettes: theming.get-color-config($custom-colors);
-
   .mat-card:not([class*=mat-elevation-z]) {
     @if $is-dark-theme {
       box-shadow: 0 2px 14px rgba(0 0 0 / 16%);

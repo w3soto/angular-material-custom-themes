@@ -16,7 +16,7 @@ $light-disabled-text: rgba($light-accent-text, 0.5);
 $light-dividers: #546990;
 $light-focused: #546990;
 
-$mat-dark-theme-foreground: (
+$theme-foreground: (
   base:              black,
   divider:           $light-dividers,
   dividers:          $light-dividers,
@@ -45,7 +45,7 @@ $light-bg-alpha-4:    rgba(#fafafa, 0.04);
 $light-bg-alpha-12:   rgba(#fafafa, 0.12);
 
 // Background palette for dark themes.
-$mat-dark-theme-background: (
+$theme-background: (
   background:               $dark-background,
   status-bar:               $dark-bg-lighter-20,
   app-bar:                  $dark-bg-lighter-5,
@@ -63,20 +63,21 @@ $mat-dark-theme-background: (
   disabled-list-option:     $dark-bg-lighter-10,
 );
 
-// Compute font config
-@include mat.core($fontConfig);
-
-// Process theme
+// Theme config
 $theme: (
-  primary: $theme-primary,
-  accent: $theme-accent,
-  warn: $theme-warn,
-  is-dark: true,
-  foreground: $mat-dark-theme-foreground,
-  background: $mat-dark-theme-background,
+  color: (
+    is-dark: true,
+    primary: $theme-primary,
+    accent: $theme-accent,
+    warn: $theme-warn,
+    foreground: $theme-foreground,
+    background: $theme-background,
+  ),
+  density: null,
+  typography: $theme-typography,
   // custom config
   custom: (
-    colors: (
+    color: (
       secondary: $theme-secondary,
       info: $theme-info,
       success: $theme-success,
@@ -84,6 +85,11 @@ $theme: (
     )
   )
 );
+
+//
+// Build theme
+//
+@include mat.core($theme-typography);
 
 .arc-dark {
   @include mat.all-component-themes($theme);
