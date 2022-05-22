@@ -95,7 +95,7 @@ $theme: (
 //
 @include mat.core($theme-typography);
 
-.arc-light {
+.arc-light-theme {
   @include mat.all-component-themes($theme);
   @include customTheme.theme($theme);
 }

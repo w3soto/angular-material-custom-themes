@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+}

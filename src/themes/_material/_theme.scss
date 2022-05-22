@@ -16,6 +16,7 @@
 @use "mat-slide-toggle" as slideToggle;
 @use "mat-slider" as slider;
 @use "mat-toolbar" as toolbar;
+@use "mat-tooltip" as tooltip;
 
 
 @mixin theme($theme) {
@@ -37,6 +38,7 @@
   @include slideToggle.theme($theme);
   @include slider.theme($theme);
   @include toolbar.theme($theme);
+  @include tooltip.theme($theme);
 
 }
 

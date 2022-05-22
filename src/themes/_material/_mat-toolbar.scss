@@ -9,6 +9,7 @@
   .mat-toolbar {
     @each $key, $palette in $custom-palettes {
       $contrast: map.get($palette, contrast);
+      &[color=#{$key}],
       &.mat-#{$key} {
         background-color: map.get($palette, main);
         @if $contrast {
@@ -16,6 +17,7 @@
         }
       }
     }
+
   }
 
 }

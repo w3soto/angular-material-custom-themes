@@ -6,6 +6,11 @@
   </button>
   <span>Custom Theme ({{ theme?.name }})</span>
   <span class="spacer"></span>
+
+  <a mat-button href="https://github.com/w3soto/angular-material-custom-themes" target="_blank">
+    GitHub
+  </a>
+
   <button mat-icon-button [matMenuTriggerFor]="themeMenu">
     <mat-icon>format_color_fill</mat-icon>
 
@@ -37,6 +42,8 @@
       <a mat-list-item matLine [routerLink]="['radio-button']">Radio button</a>
       <a mat-list-item matLine [routerLink]="['slide-toggle']">Slide toggle</a>
       <a mat-list-item matLine [routerLink]="['slider']">Slider</a>
+      <a mat-list-item matLine [routerLink]="['toolbar']">Toolbar</a>
+      <a mat-list-item matLine [routerLink]="['tooltip']">Tooltip</a>
       <a mat-list-item matLine [routerLink]="['typography']">Typography</a>
     </mat-nav-list>
 

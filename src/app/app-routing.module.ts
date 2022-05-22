@@ -14,6 +14,8 @@ import { RadioButtonComponent } from "./radio-button/radio-button.component";
 import { SlideToggleComponent } from "./slide-toggle/slide-toggle.component";
 import { SliderComponent } from "./slider/slider.component";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { TooltipComponent } from "./tooltip/tooltip.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'badge', pathMatch: 'full'},
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path: 'radio-button', component: RadioButtonComponent},
   {path: 'slide-toggle', component: SlideToggleComponent},
   {path: 'slider', component: SliderComponent},
+  {path: 'toolbar', component: ToolbarComponent},
+  {path: 'tooltip', component: TooltipComponent},
   {path: 'typography', component: TypographyComponent},
   // home
   {path: '**', redirectTo: 'badge'}

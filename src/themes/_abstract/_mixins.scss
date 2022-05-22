@@ -1,0 +1,11 @@
+
+
+@mixin export_colors($prefix, $colors-map) {
+  @each $key, $value in $colors-map {
+    --#{$prefix}-#{$key}-color: #{$value};
+  }
+}
+
+@mixin export_color_palette($palette) {
+
+}

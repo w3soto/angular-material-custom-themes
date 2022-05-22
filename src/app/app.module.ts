@@ -22,6 +22,12 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { SliderComponent } from './slider/slider.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { TableComponent } from './table/table.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 
 
@@ -41,7 +47,13 @@ import { SliderComponent } from './slider/slider.component';
     CheckboxComponent,
     RadioButtonComponent,
     SlideToggleComponent,
-    SliderComponent
+    SliderComponent,
+    TooltipComponent,
+    DialogComponent,
+    SnackbarComponent,
+    TableComponent,
+    ToolbarComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,

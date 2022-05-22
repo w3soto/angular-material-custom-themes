@@ -10,15 +10,16 @@
   }
 
   .mat-card-content {
+    flex-direction: column;
     display: flex;
-    flex-wrap: wrap;
     gap: 16px;
-    align-items: center;
   }
 
-  .mat-form-field {
-    flex: 1;
-    min-width: 100%;
+  .mat-toolbar {
+    gap: 8px;
+    span {
+      flex: 1;
+    }
   }
 
 }

@@ -7,36 +7,59 @@
     <mat-card-content>
 
       <mat-chip-list>
-
         <mat-chip>
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog default
         </mat-chip>
-
         <mat-chip *ngFor="let c of allColors" selected [color]="c">
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog {{ c }}
         </mat-chip>
-
         <mat-chip disabled>
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog disabled
         </mat-chip>
-
         <mat-chip selected disabled>
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog disabled
         </mat-chip>
-
       </mat-chip-list>
+
+      <mat-form-field class="example-chip-list" appearance="outline">
+        <mat-label>Favorite Fruits</mat-label>
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip
+            *ngFor="let fruit of fruits"
+            color="info"
+            (removed)="remove(fruit)">
+            {{fruit}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            placeholder="New fruit..."
+            #fruitInput
+            [formControl]="fruitCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+            {{fruit}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
 
     </mat-card-content>
   </mat-card>
@@ -46,30 +69,38 @@
     <mat-card-content>
 
       <mat-chip-list>
-        <mat-chip selected dense color="accent">
-          Chip dense
-        </mat-chip>
-        <mat-chip selected dense color="caution">
+        <mat-chip dense>
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
-          Chip dense with image
+          Dog default
+        </mat-chip>
+        <mat-chip *ngFor="let c of allColors" selected [color]="c" dense>
+          <mat-chip-avatar>
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+          </mat-chip-avatar>
+          Dog {{ c }}
+        </mat-chip>
+        <mat-chip dense disabled>
+          <mat-chip-avatar>
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+          </mat-chip-avatar>
+          Dog disabled
+        </mat-chip>
+        <mat-chip selected dense disabled>
+          <mat-chip-avatar>
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+          </mat-chip-avatar>
+          Dog disabled
         </mat-chip>
       </mat-chip-list>
-
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-title>Autocomplete with dense Chips</mat-card-title>
-    <mat-card-content class="row">
 
       <mat-form-field class="example-chip-list" appearance="outline">
         <mat-label>Favorite Fruits</mat-label>
         <mat-chip-list #chipList aria-label="Fruit selection">
           <mat-chip
             *ngFor="let fruit of fruits"
-            color="primary"
+            color="success"
             dense
             (removed)="remove(fruit)">
             {{fruit}}

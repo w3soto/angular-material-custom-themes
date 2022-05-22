@@ -7,8 +7,6 @@
 
 
 // Foreground Elements
-
-// Dark Theme text
 $light-text: white;
 $light-primary-text: $light-text;
 $light-accent-text: #a1b0cb;
@@ -19,7 +17,6 @@ $light-focused: #546990;
 $theme-foreground: (
   base:              black,
   divider:           $light-dividers,
-  dividers:          $light-dividers,
   disabled:          $light-disabled-text,
   disabled-button:   rgba(#fafafa, 0.24), //$light-disabled-text,
   disabled-text:     $light-disabled-text,
@@ -35,7 +32,6 @@ $theme-foreground: (
   slider-off-active: rgba($light-accent-text, 0.3),
 );
 
-// Dark bg
 $dark-bg:             #1C222F;
 $dark-bg-lighter-5:   lighten($dark-bg, 5%);
 $dark-bg-lighter-10:  lighten($dark-bg, 10%);
@@ -46,54 +42,19 @@ $light-bg-alpha-12:   rgba(#fff, .12);
 
 // Background palette
 $theme-background: (
-  // .mat-app-background
-  // .checkbox-mark-color (stroke)
-  // .mat-drawer-container
   background:               transparentize($dark-bg, .8),
-  // .mat-toolbar
   app-bar:                  transparentize($dark-bg, .04),
-  // .mat-option
-  // .mat-list-option
-  // .mat-list-item
-  // .mat-step-header
-  // .mat-expansion-panel
   hover:                    $light-bg-alpha-4,
-  // .mat-card
-  // .mat-autocomplete-panel
-  // .mat-option
-  // .mat-button-toggle-appearance-standard (+ added to mat-button-toggle-appearance-legacy)
-  // .mat-menu-panel
-  // .mat-select-panel
-  // .mat-drawer-backdrop (+opacity .6)
-  // .mat-stepper-horizontal
-  // .mat-table
-  // .mat-tree
   card:                     transparentize($dark-bg, .12),
-  // .mat-bottom-sheet-container
-  // .mat-drawer-push
   dialog:                   transparentize($dark-bg, .12),
-  // .mat-tooltip
-  tooltip:                  $dark-bg-lighter-20,
-  // .mat-badge-disabled
-  // .mat-button-disabled
-  // .mat-expansion-panel-header (disabled)
+  tooltip:                  #FFF5C3,
   disabled-button:          $dark-bg-lighter-5,
-  // .mat-flat-button
-  // .mat-raised-button
-  // .mat-fab
-  // .mat-mini-fab
   raised-button:            $dark-bg-lighter-5,
-  // .mat-button-toggle-focus-overlay
   focused-button:           $light-focused,
-  // .mat-button-toggle-checked
   selected-button:          $dark-bg-lighter-10,
-  // .mat-button-toggle-disabled.mat-button-toggle-checked
   selected-disabled-button: $dark-bg-lighter-30,
-  // .mat-button-toggle-disabled
   disabled-button-toggle:   transparent, //$dark-bg-lighter-10,
-  // mat-chip.mat-standard-chip
   unselected-chip:          $dark-bg-lighter-10,
-  // .mat-list-item-disabled
   disabled-list-option:     $dark-bg-lighter-10,
 );
 
@@ -125,9 +86,15 @@ $theme: (
 //
 @include mat.core($theme-typography);
 
-.transparent-dark {
+.transparent-dark-theme {
   @include mat.all-component-themes($theme);
   @include customTheme.theme($theme);
 
   background-image: url('/assets/bg.jpg');
+  background-size: cover;
+
+  .mat-tooltip {
+    color: black;
+  }
+
 }

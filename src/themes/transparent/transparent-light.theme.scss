@@ -125,9 +125,10 @@ $theme: (
 //
 @include mat.core($theme-typography);
 
-.transparent-light {
+.transparent-light-theme {
   @include mat.all-component-themes($theme);
   @include customTheme.theme($theme);
 
   background-image: url('/assets/bg.jpg');
+  background-size: cover;
 }
