@@ -97,6 +97,19 @@
 }
 
 
+@mixin density($theme) {
+
+  .mat-tab-group[dense],
+  .mat-tab-nav-bar[dense] {
+    .mat-tab-label,
+    .mat-tab-link {
+      height: 40px;
+    }
+  }
+
+}
+
 @mixin theme($theme) {
   @include color($theme);
+  @include density($theme);
 }
