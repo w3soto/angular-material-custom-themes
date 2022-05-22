@@ -1,0 +1,52 @@
+<h1 class="mat-display-1">Tabs</h1>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Tab groups colors</mat-card-title>
+    <mat-card-content>
+
+      <mat-tab-group *ngFor="let c of allColors" [color]="c">
+        <mat-tab label="First"></mat-tab>
+        <mat-tab label="Second"></mat-tab>
+        <mat-tab label="Third"></mat-tab>
+      </mat-tab-group>
+
+      <mat-tab-group *ngFor="let c of allColors" [color]="c" [backgroundColor]="$any(c)">
+        <mat-tab label="First"></mat-tab>
+        <mat-tab label="Second"></mat-tab>
+        <mat-tab label="Third"></mat-tab>
+      </mat-tab-group>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Tab nav colors</mat-card-title>
+    <mat-card-content>
+
+      <div *ngFor="let c of allColors">
+        <nav mat-tab-nav-bar [color]="$any(c)" [attr.color]="c" [tabPanel]="tabPanel1">
+          <a mat-tab-link *ngFor="let link of links"
+             (click)="activeLink = link + c"
+             [active]="activeLink == link + c"> {{ link + ' ' + c}} </a>
+          <a mat-tab-link disabled>Disabled Link</a>
+        </nav>
+        <mat-tab-nav-panel #tabPanel1></mat-tab-nav-panel>
+      </div>
+
+      <div *ngFor="let c of allColors">
+        <nav mat-tab-nav-bar [color]="$any(c)" [backgroundColor]="$any(c)" [attr.color]="c" [tabPanel]="tabPanel2">
+          <a mat-tab-link *ngFor="let link of links"
+             (click)="activeLink = link + c"
+             [active]="activeLink == link + c"> {{ link + ' ' + c}} </a>
+          <a mat-tab-link disabled>Disabled Link</a>
+        </nav>
+        <mat-tab-nav-panel #tabPanel2></mat-tab-nav-panel>
+
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>

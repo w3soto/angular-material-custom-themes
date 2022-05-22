@@ -18,8 +18,7 @@ export class AppComponent implements OnInit {
     {name: 'Arc light', className: 'arc-light-theme', source: 'arc-light-theme.css'},
     {name: 'Arc dark', className: 'arc-dark-theme', source: 'arc-dark-theme.css'},
     {name: 'Transparent light', className: 'transparent-light-theme', source: 'transparent-light-theme.css'},
-    {name: 'Transparent dark', className: 'transparent-dark-theme', source: 'transparent-dark-theme.css'},
-    {name: 'HireMe', className: 'hireme-theme', source: 'hireme-theme.css'}
+    {name: 'Transparent dark', className: 'transparent-dark-theme', source: 'transparent-dark-theme.css'}
   ];
 
   theme?: Theme;
