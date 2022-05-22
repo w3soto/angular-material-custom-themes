@@ -49,4 +49,43 @@
     </mat-card-content>
   </mat-card>
 
+  <mat-card>
+    <mat-card-title>Tab dense variant</mat-card-title>
+    <mat-card-content>
+
+      <mat-tab-group color="primary" dense>
+        <mat-tab label="First"></mat-tab>
+        <mat-tab label="Second"></mat-tab>
+        <mat-tab label="Third"></mat-tab>
+      </mat-tab-group>
+
+      <mat-tab-group color="info" [backgroundColor]="$any('info')" dense>
+        <mat-tab label="First"></mat-tab>
+        <mat-tab label="Second"></mat-tab>
+        <mat-tab label="Third"></mat-tab>
+      </mat-tab-group>
+
+      <div>
+        <nav mat-tab-nav-bar color="success" [attr.color]="'success'" [tabPanel]="tabPanel3" dense>
+          <a mat-tab-link *ngFor="let link of links"
+             (click)="activeLink = link"
+             [active]="activeLink == link"> {{ link}} </a>
+          <a mat-tab-link disabled>Disabled Link</a>
+        </nav>
+        <mat-tab-nav-panel #tabPanel3></mat-tab-nav-panel>
+      </div>
+
+      <div>
+        <nav mat-tab-nav-bar color="caution" [backgroundColor]="$any('caution')" [attr.color]="'caution'" [tabPanel]="tabPanel4" dense>
+          <a mat-tab-link *ngFor="let link of links"
+             (click)="activeLink = link"
+             [active]="activeLink == link"> {{ link }} </a>
+          <a mat-tab-link disabled>Disabled Link</a>
+        </nav>
+        <mat-tab-nav-panel #tabPanel4></mat-tab-nav-panel>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
 </section>
