@@ -18,6 +18,7 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
 import { TooltipComponent } from "./tooltip/tooltip.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { TableComponent } from "./table/table.component";
+import { SnackbarComponent } from "./snackbar/snackbar.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'badge', pathMatch: 'full'},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'radio-button', component: RadioButtonComponent},
   {path: 'slide-toggle', component: SlideToggleComponent},
   {path: 'slider', component: SliderComponent},
+  {path: 'snackbar', component: SnackbarComponent},
   {path: 'table', component: TableComponent},
   {path: 'tabs', component: TabsComponent},
   {path: 'toolbar', component: ToolbarComponent},
