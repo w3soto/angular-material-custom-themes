@@ -15,6 +15,7 @@
 @use "mat-sidenav" as sidenav;
 @use "mat-slide-toggle" as slideToggle;
 @use "mat-slider" as slider;
+@use "mat-table" as table;
 @use "mat-tabs" as tabs;
 @use "mat-toolbar" as toolbar;
 @use "mat-tooltip" as tooltip;
@@ -38,6 +39,7 @@
   @include sidenav.theme($theme);
   @include slideToggle.theme($theme);
   @include slider.theme($theme);
+  @include table.theme($theme);
   @include tabs.theme($theme);
   @include toolbar.theme($theme);
   @include tooltip.theme($theme);

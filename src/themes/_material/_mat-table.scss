@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+}
+
+
+@mixin density($theme) {
+
+  .mat-table[dense] {
+    tr.mat-header-row {
+      height: 48px;
+    }
+    tr.mat-row,
+    tr.mat-footer-row {
+      height: 40px;
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include density($theme);
+}

@@ -23,6 +23,22 @@
 }
 
 
+@mixin density($theme) {
+
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    height: 64px;
+  }
+
+  .mat-toolbar-row[dense],
+  .mat-toolbar-single-row[dense] {
+    height: 48px;
+  }
+
+}
+
+
 @mixin theme($theme) {
   @include color($theme);
+  @include density($theme);
 }
