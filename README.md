@@ -12,10 +12,16 @@ Custom Angular Material themes (dark & light)
 ## TODO
 * Add compact variants
 
+## Typography
+```scss
+$theme-typography: (
+)
+```
+
 ## Background colors
 
 ```scss
-$mat-theme-background: (
+$theme-background: (
   // .mat-app-background
   // .checkbox-mark-color (stroke)
   // .mat-drawer-container
@@ -73,20 +79,113 @@ $mat-theme-background: (
 ## Text (foreground) colors
 ```scss
 
+$dark-theme-foreground-palette: (
+  // .mat-button-focus-overlay
+  // .mat-ripple-element
+  // .mat-slider-tick-color
+  base: $light-primary-text,
+  // .mat-stroked-button (border)
+  // .mat-button-toggle-group-appearance-standard (border)
+  // .mat-calendar-table-header-divider
+  // .mat-form-field-underline
+  // .mat-form-field-outline
+  // .mat-drawer (border)
+  // .mat-stepper (lines)
+  // .mat-table (borders)
+  divider: $light-dividers,
+  dividers: $light-dividers,
+  // disabled elements color
+  disabled: $light-disabled-text,
+  disabled-button: $light-disabled-text,
+  disabled-text: $light-disabled-text,
+  // elevation color
+  elevation: black,
+  // .mat-button-toggle
+  // .mat-optgroup-disabled .mat-optgroup-label
+  // .mat-option-disabled
+  // .mat-calendar-table-header
+  // .mat-calendar-body-today
+  hint-text: $light-secondary-text,
+  // .mat-button-toggle-checked
+  // .mat-card-subtitle
+  // .mat-checkbox-frame
+  // .mat-checkbox-label
+  // .mat-optgroup-label
+  // .mat-calendar-body-label
+  // .mat-expansion-panel-header-description
+  // .mat-form-field-label
+  // .mat-list-base .mat-subheader
+  // .mat-paginator
+  // .mat-radio-outer-circle
+  // .mat-select-arrow
+  // .mat-sort-header-arrow
+  // .mat-step-label
+  // .mat-step-icon
+  // .mat-header-cell
+  secondary-text: $light-secondary-text,
+  accent-text: $light-secondary-text,
+  // .mat-calendar-arrow
+  // .mat-datepicker-toggle
+  // .mat-datepicker-content .mat-calendar-next-button
+  // .mat-datepicker-content .mat-calendar-previous-button
+  icon: $light-secondary-text,
+  icons: $light-secondary-text,
+  // default text color
+  text: $light-primary-text,
+  // slider color
+  slider-min: $light-secondary-text,
+  slider-off: rgba($light-secondary-text, 0.3),
+  slider-off-active: rgba($light-secondary-text, 0.3),
+);
 ```
 
 ## Built-in color palettes
 ```scss
+$theme-primary: ();
+
+$theme-accent: ();
+
+$theme-warn: ();
 
 ```
 
 ## Custom color palettes
 ```scss
+$theme-custom-color-1: ();
+...
+$theme-custom-color-N: ();
 
 ```
 
 ## Theme
 ```scss
+$theme: (
+  color: (
+    is-dark: true/false,
+    primary: $theme-primary,
+    accent: $theme-accent,
+    warn: $theme-warn,
+    foreground: $theme-foreground,
+    background: $theme-background,
+  ),
+  density: null,
+  typography: $theme-typography,
+  // custom config
+  custom: (
+    color: (
+      color1: $theme-custom-color-1,
+      ...
+      colorN: $theme-custom-color-N,
+    )
+  )
+);
+
+@include mat.core($theme-typography);
+
+.THEME-NAME-dark/light-theme {
+  @include mat.all-component-themes($theme);
+  @include customTheme.theme($theme);
+}
 
 ```
 
