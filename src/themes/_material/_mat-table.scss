@@ -3,6 +3,38 @@
 
 
 @mixin color($theme) {
+
+  .mat-table {
+    caption {
+      background: inherit;
+      padding: 16px;
+    }
+  }
+
+}
+
+
+@mixin typography($theme) {
+
+  $config: theming.get-typography-config($theme);
+
+  .mat-table {
+    // add custom caption styles
+    caption {
+      text-align: left;
+      font: {
+        size: map.get(map.get($config, headline), font-size);
+        weight: map.get(map.get($config, title), font-weight);
+      }
+    }
+    .mat-checkbox {
+      transform: translateY(-1px);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+
 }
 
 
@@ -23,5 +55,6 @@
 
 @mixin theme($theme) {
   @include color($theme);
+  @include typography($theme);
   @include density($theme);
 }
