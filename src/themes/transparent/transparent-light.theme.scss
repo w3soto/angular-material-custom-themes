@@ -1,6 +1,9 @@
 
-@use '@angular/material' as mat;
-@use "../_material/theme" as customTheme;
+@use '@angular/material' as theming;
+@use "../_material/theme" as matTheme;
+@use "../_app/theme" as appTheme;
+@use "../_abstract/mixins" as mixins;
+
 
 @import "colors";
 @import "typography";
@@ -123,11 +126,16 @@ $theme: (
 //
 // Build theme
 //
-@include mat.core($theme-typography);
+@include theming.core($theme-typography);
+
+:root {
+  @include mixins.export_theme_colors($theme);
+}
 
 .transparent-light-theme {
-  @include mat.all-component-themes($theme);
-  @include customTheme.theme($theme);
+  @include theming.all-component-themes($theme);
+  @include matTheme.theme($theme);
+  @include appTheme.theme($theme);
 
   background-image: url('/assets/bg.jpg');
   background-size: cover;

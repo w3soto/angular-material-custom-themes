@@ -1,11 +1,58 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
 
 
-@mixin export_colors($prefix, $colors-map) {
-  @each $key, $value in $colors-map {
-    --#{$prefix}-#{$key}-color: #{$value};
+@mixin _export_palette($name, $palette) {
+  @each $variant in (main, lighter, darker) {
+    --#{$name}-#{$variant}-color:  #{map.get($palette, $variant)};
+    --#{$name}-#{$variant}-text-color:  #{map.get(map.get($palette, contrast), $variant)};
   }
 }
 
-@mixin export_color_palette($palette) {
+
+@mixin export_theme_colors($theme) {
+
+  $config: theming.get-color-config($theme);
+  $is-dark-theme: map.get($config, is-dark);
+
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
+
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
+
+  // background
+  --background-color: #{map.get($background, background)};
+  --card-color: #{map.get($background, card)};
+  --dialog-color: #{map.get($background, dialog)};
+  --tooltip-color: #{map.get($background, tooltip)};
+  --app-bar-color: #{map.get($background, app-bar)};
+  --status-bar-color: #{map.get($background, status-bar)};
+  --raised-button-color: #{map.get($background,raised-button)};
+  --focused-button-color: #{map.get($background, focused-button)};
+  --selected-button-color: #{map.get($background, selected-button)};
+  --disabled-button-color: #{map.get($background, disabled-button)};
+
+  // foreground
+  --text-color: #{map.get($foreground, text)};
+  --secondary-text-color: #{map.get($foreground, secondary-text)};
+  --hint-text-color: #{map.get($foreground, hint-text)};
+  --disabled-text-color: #{map.get($foreground, disabled)};
+  --disabled-button-text-color: #{map.get($foreground, disabled-button)};
+  --icon-text-color: #{map.get($foreground, icon)};
+  --divider-color: #{map.get($foreground, divider)};
+
+  // built-in colors
+  @each $name, $palette in (primary: $primary, accent: $accent, warn: $warn) {
+    @include _export_palette($name, $palette);
+  }
+
+  // custom colors
+  @each $name, $palette in $custom-palettes {
+    @include _export_palette($name, $palette);
+  }
 
 }
+
