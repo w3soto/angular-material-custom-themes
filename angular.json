@@ -34,7 +34,7 @@
               {
                 "input": "src/themes/arc/arc-light.theme.scss",
                 "bundleName": "arc-light-theme",
-                "inject": true
+                "inject": false
               },
               {
                 "input": "src/themes/arc/arc-dark.theme.scss",
