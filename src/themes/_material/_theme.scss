@@ -9,6 +9,7 @@
 @use "mat-icon" as icon;
 @use "mat-list" as list;
 @use "mat-menu" as menu;
+@use "mat-paginator" as paginator;
 @use "mat-progress-bar" as progressBar;
 @use "mat-progress-spinner" as progressSpinner;
 @use "mat-radio" as radio;
@@ -33,6 +34,7 @@
   @include icon.theme($theme);
   @include list.theme($theme);
   @include menu.theme($theme);
+  @include paginator.theme($theme);
   @include progressBar.theme($theme);
   @include progressSpinner.theme($theme);
   @include radio.theme($theme);

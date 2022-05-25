@@ -1,0 +1,22 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+}
+
+
+@mixin typography($theme) {
+  $config: theming.get-typography-config($theme);
+
+  .mat-paginator {
+
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+}

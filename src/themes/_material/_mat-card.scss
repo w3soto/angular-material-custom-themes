@@ -23,27 +23,32 @@
 
   $config: theming.get-typography-config($theme);
 
+  // customize card
   .mat-card {
     overflow: hidden;
   }
 
-  .mat-card > .mat-card-title {
-    margin-bottom: 24px;
+  .mat-card-header {
+    gap: 16px;
   }
 
-  .mat-card .mat-card-header-text {
-    margin: 0 0 12px;
-    .mat-card-title {
-      margin-bottom: 12px;
-    }
-    .mat-card-subtitle {
-      margin-bottom: 12px;
-    }
+  .mat-card-header-text {
+    margin: 0;
   }
 
-  .mat-card .mat-card-subtitle {
-    font-weight: 500;
+  .mat-card-actions {
+    margin-left: 0;
+    margin-right: 0;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+    padding-top: 16px;
   }
+
+  .mat-card .mat-divider + .mat-card-content {
+    padding-top: 16px;
+  }
+
 }
 
 

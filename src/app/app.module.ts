@@ -28,6 +28,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { TableComponent } from './table/table.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -53,7 +54,8 @@ import { TabsComponent } from './tabs/tabs.component';
     SnackbarComponent,
     TableComponent,
     ToolbarComponent,
-    TabsComponent
+    TabsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

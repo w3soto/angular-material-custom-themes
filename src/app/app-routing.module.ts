@@ -19,6 +19,7 @@ import { TooltipComponent } from "./tooltip/tooltip.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { TableComponent } from "./table/table.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
+import { CardComponent } from "./card/card.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'badge', pathMatch: 'full'},
@@ -26,8 +27,9 @@ const routes: Routes = [
   {path: 'badge', component: BadgeComponent},
   {path: 'button', component: ButtonComponent},
   {path: 'button-toggle', component: ButtonToggleComponent},
-  {path: 'chip', component: ChipComponent},
+  {path: 'card', component: CardComponent},
   {path: 'checkbox', component: CheckboxComponent},
+  {path: 'chip', component: ChipComponent},
   {path: 'form-field', component: FormFieldComponent},
   {path: 'list', component: ListComponent},
   {path: 'menu', component: MenuComponent},
