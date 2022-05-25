@@ -22,3 +22,8 @@
   }
 
 }
+
+::ng-deep .mat-chip-avatar img {
+  width: 100%;
+  object-fit: cover;
+}
