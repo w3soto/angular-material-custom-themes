@@ -4,13 +4,33 @@
 
 @mixin color($theme) {
 
+  $config: theming.get-color-config($theme);
+  $background: map.get($config, background);
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
+
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-icon {
+
+    &[color=primary],
+    &.mat-primary {
+      color: theming.get-color-from-palette($primary);
+    }
+    &[color=accent],
+    &.mat-accent {
+      color: theming.get-color-from-palette($accent);
+    }
+    &[color=warn],
+    &.mat-warn {
+      color: theming.get-color-from-palette($warn);
+    }
+
     @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {
-        color: map.get($palette, main);
+        color: theming.get-color-from-palette($palette);
       }
     }
   }
