@@ -7,7 +7,8 @@ Custom Angular Material themes (dark & light)
 
 ## Features
 * More colors (secondary, info, success, caution)
-* Dense variants
+* Dense variants (Button, Button Toggle, Form field, Chip, List, MenuItem, Tabs, Table, Toolbar)
+* Form field [hide-error] and [hide-hint] attributes
 
 ## TODO
 * Add compact variants
