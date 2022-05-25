@@ -19,12 +19,23 @@
 
 
 @mixin typography($theme) {
+
+  $size: 24px;
+  $dense-size: 20px;
+
   .material-icons {
-    font-size: 24px;
+    font-size: $size;
     font-family: 'Material Icons', 'Material Icons';
     .mat-badge-content {
       font-family: 'Roboto';
     }
+  }
+
+  .mat-icon[dense] {
+    font-size: $dense-size;
+    line-height: $dense-size;
+    width: $dense-size;
+    height: $dense-size;
   }
 }
 
