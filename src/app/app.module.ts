@@ -29,6 +29,7 @@ import { TableComponent } from './table/table.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { CardComponent } from './card/card.component';
+import { IconComponent } from './icon/icon.component';
 
 
 
@@ -55,7 +56,8 @@ import { CardComponent } from './card/card.component';
     TableComponent,
     ToolbarComponent,
     TabsComponent,
-    CardComponent
+    CardComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,

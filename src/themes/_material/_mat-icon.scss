@@ -3,6 +3,18 @@
 
 
 @mixin color($theme) {
+
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
+
+  .mat-icon {
+    @each $key, $palette in $custom-palettes {
+      &[color=#{$key}],
+      &.mat-#{$key} {
+        color: map.get($palette, main);
+      }
+    }
+  }
+
 }
 
 

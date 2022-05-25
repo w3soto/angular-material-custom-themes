@@ -20,6 +20,7 @@ import { TabsComponent } from "./tabs/tabs.component";
 import { TableComponent } from "./table/table.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { CardComponent } from "./card/card.component";
+import { IconComponent } from "./icon/icon.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'badge', pathMatch: 'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'checkbox', component: CheckboxComponent},
   {path: 'chip', component: ChipComponent},
   {path: 'form-field', component: FormFieldComponent},
+  {path: 'icon', component: IconComponent},
   {path: 'list', component: ListComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'progress-bar', component: ProgressBarComponent},

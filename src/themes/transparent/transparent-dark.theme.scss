@@ -89,7 +89,7 @@ $theme: (
 @include theming.core($theme-typography);
 
 :root {
-  @include mixins.export_theme_colors($theme);
+  @include mixins.export_theme_colors_vars($theme);
 }
 
 .transparent-dark-theme {

@@ -1,0 +1,26 @@
+<h2 class="title">Icon</h2>
+
+<div>
+  See Angular's Material's <a color="primary" href="https://material.angular.io/components/icon/overview"
+                              target="_blank">Icon component</a>.
+</div>
+
+<section>
+
+  <mat-card>
+    <mat-card-title>Icon colors</mat-card-title>
+    <mat-card-content>
+
+      <div>
+        <mat-icon *ngFor="let c of allColors" [color]="c">verified</mat-icon>
+      </div>
+
+      <div>
+        <button *ngFor="let c of allColors" mat-stroked-button><mat-icon [color]="c">verified</mat-icon> Verified</button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+
+</section>
