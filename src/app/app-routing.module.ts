@@ -21,6 +21,7 @@ import { TableComponent } from "./table/table.component";
 import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { CardComponent } from "./card/card.component";
 import { IconComponent } from "./icon/icon.component";
+import { DialogComponent } from "./dialog/dialog.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'badge', pathMatch: 'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'card', component: CardComponent},
   {path: 'checkbox', component: CheckboxComponent},
   {path: 'chip', component: ChipComponent},
+  {path: 'dialog', component: DialogComponent},
   {path: 'form-field', component: FormFieldComponent},
   {path: 'icon', component: IconComponent},
   {path: 'list', component: ListComponent},

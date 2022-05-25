@@ -1,0 +1,42 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+
+  $config: theming.get-color-config($theme);
+
+  $foreground: map.get($config, foreground);
+
+  .mat-dialog-title {
+    > .mat-icon {
+      color: map.get($foreground, secondary-text);
+    }
+  }
+
+}
+
+
+@mixin typography($theme) {
+
+  .mat-dialog-title {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    > span {
+      flex: 1;
+    }
+  }
+
+  .mat-dialog-actions {
+    min-height: 40px;
+    padding: 24px 0;
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include typography($theme);
+  @include color($theme);
+}
