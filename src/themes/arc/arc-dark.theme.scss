@@ -1,4 +1,4 @@
-
+@use 'sass:map';
 @use '@angular/material' as theming;
 @use "../_material/theme" as matTheme;
 @use "../_app/theme" as appTheme;
@@ -101,4 +101,14 @@ $theme: (
   @include theming.all-component-themes($theme);
   @include matTheme.theme($theme);
   @include appTheme.theme($theme);
+
+  background-color: $dark-background;
+
+  a:not(.mat-button),
+  a:not(.mat-button):hover,
+  a:not(.mat-button):active,
+  a:not(.mat-button):visited {
+    color: map.get($theme-primary, default);
+  }
+
 }
