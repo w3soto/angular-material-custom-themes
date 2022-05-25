@@ -9,17 +9,14 @@
 
   $foreground: map.get($config, foreground);
 
-  .mat-card {
+  .mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+  }
 
-    &:not([class*=mat-elevation-z]) {
-      box-shadow: none;
-    }
-
-    .mat-card-header,
-    .mat-card-title {
-      &.mat-icon {
-        color: map.get($foreground, secondary-text);
-      }
+  .mat-card-header,
+  .mat-card-title {
+    .mat-icon {
+      color: map.get($foreground, secondary-text);
     }
   }
 
