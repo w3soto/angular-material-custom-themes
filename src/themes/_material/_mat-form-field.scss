@@ -99,6 +99,17 @@
   .mat-form-field[dense] {
     @include _custom-mat-form-field-density(9.7px, $base-input-font-size);
   }
+
+  .mat-form-field[hide-error],
+  .mat-form-field[hide-hint] {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+
 }
 
 
