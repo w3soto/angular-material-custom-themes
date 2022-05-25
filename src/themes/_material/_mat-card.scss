@@ -42,13 +42,9 @@
 
   .mat-card-title {
     margin-bottom: 16px;
-    .mat-icon {
-      vertical-align: middle;
-      line-height: 20px;
-      &:first-child {
-        margin-right: 4px;
-      }
-    }
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .mat-card-title + .mat-card-subtitle {
@@ -74,10 +70,13 @@
   .mat-card-actions {
     margin-left: 0;
     margin-right: 0;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     &:last-child {
       margin-bottom: 0 !important;
     }
-    padding-top: 16px;
   }
 
 }
