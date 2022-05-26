@@ -2,31 +2,55 @@
 // SCROLLBARS
 ///////////////////////////////////////////////////////////////////////////////
 
-$track-color: rgba(255,255,255,.1);
-$thumb-color: rgba(255,255,255,.25);
-$thin-width: 6px;
-$auto-width: 12px;
 
-// firefox
-* {
-  scrollbar-color: $thumb-color $track-color;
-  scrollbar-width: thin;
+@mixin color($theme) {
+
+  $track-color: rgba(255, 255, 255, .1);
+  $thumb-color: rgba(255, 255, 255, .25);
+
+  // firefox
+  * {
+    scrollbar-color: $thumb-color $track-color;
+  }
+  // chrome
+  *::-webkit-scrollbar-track {
+    background-color: $track-color;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: $thumb-color;
+  }
 }
-// chrome
-*::-webkit-scrollbar {
-  width: $auto-width;
-  height: $auto-width;
-}
-*::-webkit-scrollbar-track {
-  background-color: $track-color;
-  border-radius: 0px;
-}
-*::-webkit-scrollbar-thumb {
-  background: $thumb-color;
-  border-radius: 0px;
-}
-*::-webkit-scrollbar-thumb:hover {
-  background: $thumb-color;
+
+@mixin density($theme) {
+
+  // thin-width: 6px;
+  // auto-width: 12px;
+  $width: 6px;
+
+  // firefox
+  * {
+    scrollbar-width: auto;
+  }
+  // chrome
+  *::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 0px;
+  }
+  *::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+  }
+
+  //.mat-drawer > *::-webkit-scrollbar {
+  //  width: $width/2;
+  //  height: $width/2;
+  //}
+
 }
 
 //body,
@@ -43,3 +67,9 @@ $auto-width: 12px;
 //    border-radius: 0px;
 //  }
 //}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include density($theme);
+}

@@ -2,7 +2,7 @@
 @use '@angular/material' as theming;
 
 
-@mixin _export_palette($name, $palette) {
+@mixin _export_palette_vars($name, $palette) {
   @each $variant in (main, lighter, darker) {
     --#{$name}-#{$variant}-color:  #{map.get($palette, $variant)};
     --#{$name}-#{$variant}-text-color:  #{map.get(map.get($palette, contrast), $variant)};
@@ -10,7 +10,7 @@
 }
 
 
-@mixin export_theme_colors($theme) {
+@mixin export_theme_colors_vars($theme) {
 
   $config: theming.get-color-config($theme);
   $is-dark-theme: map.get($config, is-dark);
@@ -46,13 +46,19 @@
 
   // built-in colors
   @each $name, $palette in (primary: $primary, accent: $accent, warn: $warn) {
-    @include _export_palette($name, $palette);
+    @include _export_palette_vars($name, $palette);
   }
 
   // custom colors
   @each $name, $palette in $custom-palettes {
-    @include _export_palette($name, $palette);
+    @include _export_palette_vars($name, $palette);
   }
 
 }
+
+@mixin theme_colors($theme) {
+}
+
+
+@mixin scrollbar($width) {}
 

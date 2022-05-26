@@ -1,5 +1,8 @@
+@use "_components/scrollbars" as scrollbars;
+
 @mixin theme($theme) {
 
   // include application theme files
+  @include scrollbars.theme($theme)
 
 }
