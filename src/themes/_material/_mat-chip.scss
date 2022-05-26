@@ -54,7 +54,7 @@
 @mixin density($theme) {
 
   $dense-size: 24px;
-  $dense-icon-size: 16px;
+  $dense-icon-size: 18px;
 
   .mat-chip.mat-standard-chip[dense] {
     min-height: $dense-size;
@@ -62,7 +62,7 @@
     .mat-chip-avatar {
       width: $dense-icon-size;
       height: $dense-icon-size;
-      margin-right: 8px;
+      margin-right: 6px;
       margin-left: 4px;
     }
     &.mat-chip-with-trailing-icon {
