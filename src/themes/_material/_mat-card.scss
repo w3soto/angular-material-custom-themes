@@ -54,6 +54,7 @@
   .mat-card-title + .mat-divider + .mat-card-content,
   .mat-card-subtitle + .mat-divider + .mat-card-content,
   .mat-card-image + .mat-divider + .mat-card-content,
+  .mat-card-content + .mat-divider + .mat-card-content,
   .mat-card-title + .mat-divider + .mat-card-image,
   .mat-card-subtitle + .mat-divider + .mat-card-image {
     margin-top: 32px;
@@ -65,6 +66,9 @@
 
   .mat-icon.mat-card-avatar {
     font-size: 40px;
+    height: 40px;
+    width: 40px;
+    border-radius: 0;
   }
 
   .mat-card-actions {
