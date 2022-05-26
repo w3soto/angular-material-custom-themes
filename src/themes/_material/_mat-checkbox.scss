@@ -58,6 +58,28 @@
 }
 
 
+@mixin density($theme) {
+
+  .mat-checkbox-inner-container,
+  .mat-checkbox-label-before .mat-checkbox-inner-container {
+    margin-right: 2px;
+    margin-left: 2px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .mat-checkbox-label {
+    padding-left: 8px;
+  }
+
+  .mat-checkbox-label-before .mat-checkbox-label {
+    padding-left: 0;
+    padding-right: 8px;
+  }
+
+}
+
 @mixin theme($theme) {
   @include color($theme);
+  @include density($theme);
 }

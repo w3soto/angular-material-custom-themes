@@ -29,7 +29,19 @@
 }
 
 
+@mixin density($theme) {
+  .mat-radio-container {
+    height: 24px;
+  }
+  .mat-radio-outer-circle,
+  .mat-radio-inner-circle {
+    top: 2px;
+  }
+}
+
+
 @mixin theme($theme) {
   @include color($theme);
+  @include density($theme);
 }
 

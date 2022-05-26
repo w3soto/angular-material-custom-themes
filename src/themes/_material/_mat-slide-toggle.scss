@@ -38,6 +38,36 @@
 }
 
 
+@mixin density($theme) {
+
+  .mat-slide-toggle[inner] {
+
+    .mat-slide-toggle-bar {
+      width: 20px;
+    }
+
+    .mat-slide-toggle-thumb-container {
+      width: 10px;
+      height: 10px;
+      top: 2px;
+      left: 2px;
+    }
+
+    .mat-slide-toggle-thumb {
+      width: 10px;
+      height: 10px;
+    }
+
+    &.mat-checked .mat-slide-toggle-thumb-container {
+      transform: translate3d(6px, 0, 0);
+    }
+
+  }
+
+}
+
+
 @mixin theme($theme) {
   @include color($theme);
+  @include density($theme);
 }

@@ -8,16 +8,28 @@
 <section>
 
   <mat-card>
+    <mat-card-title>Radio button label position</mat-card-title>
+    <mat-card-content>
+
+      <mat-radio-group>
+        <mat-radio-button
+          color="primary">After
+        </mat-radio-button>
+        <mat-radio-button
+          color="primary"
+          checked labelPosition="before">Before</mat-radio-button>
+      </mat-radio-group>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
     <mat-card-title>Radio button colors</mat-card-title>
     <mat-card-content>
 
       <mat-radio-group *ngFor="let c of allColors" [name]="c">
         <mat-radio-button
           checked
-          [color]="$any(c)"
-          [attr.color]="c">{{ c | titlecase }} checkbox</mat-radio-button>
-        <mat-radio-button
-          [value]="false"
           [color]="$any(c)"
           [attr.color]="c">{{ c | titlecase }} checkbox</mat-radio-button>
       </mat-radio-group>

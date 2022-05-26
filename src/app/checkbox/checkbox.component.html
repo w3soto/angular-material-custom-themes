@@ -8,6 +8,22 @@
 <section>
 
   <mat-card>
+    <mat-card-title>Checkbox label position</mat-card-title>
+    <mat-card-content>
+
+      <mat-checkbox
+        color="primary"
+        checked>After
+      </mat-checkbox>
+      <mat-checkbox
+        color="primary"
+        checked labelPosition="before">Before
+      </mat-checkbox>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
     <mat-card-title>Checkbox colors</mat-card-title>
     <mat-card-content>
 
@@ -15,7 +31,8 @@
         *ngFor="let c of allColors"
         checked
         [color]="c"
-        checked>{{ c | titlecase }} checkbox</mat-checkbox>
+        checked>{{ c | titlecase }} checkbox
+      </mat-checkbox>
 
     </mat-card-content>
   </mat-card>
