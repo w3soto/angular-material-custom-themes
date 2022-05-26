@@ -10,7 +10,9 @@
   $config: theming.get-typography-config($theme);
 
   .mat-paginator {
-
+    .mat-paginator-container {
+      padding: 8px 8px;
+    }
   }
 
 }
