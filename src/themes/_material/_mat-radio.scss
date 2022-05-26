@@ -32,10 +32,12 @@
 @mixin density($theme) {
   .mat-radio-container {
     height: 24px;
+    width: 24px;
   }
   .mat-radio-outer-circle,
   .mat-radio-inner-circle {
     top: 2px;
+    left: 2px;
   }
 }
 

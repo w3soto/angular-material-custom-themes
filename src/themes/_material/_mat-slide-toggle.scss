@@ -43,7 +43,7 @@
   .mat-slide-toggle[inner] {
 
     .mat-slide-toggle-bar {
-      width: 20px;
+      width: 24px;
     }
 
     .mat-slide-toggle-thumb-container {
@@ -59,7 +59,7 @@
     }
 
     &.mat-checked .mat-slide-toggle-thumb-container {
-      transform: translate3d(6px, 0, 0);
+      transform: translate3d(10px, 0, 0);
     }
 
   }
