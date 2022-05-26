@@ -44,6 +44,7 @@
   $dense-size: 20px;
 
   .material-icons {
+    vertical-align: middle;
     font-size: $size;
     font-family: 'Material Icons', 'Material Icons';
     .mat-badge-content {
