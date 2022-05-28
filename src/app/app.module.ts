@@ -31,6 +31,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { CardComponent } from './card/card.component';
 import { IconComponent } from './icon/icon.component';
 import { DialogExampleComponent } from './dialog/dialog-example/dialog-example.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 
 
@@ -59,7 +60,8 @@ import { DialogExampleComponent } from './dialog/dialog-example/dialog-example.c
     TabsComponent,
     CardComponent,
     IconComponent,
-    DialogExampleComponent
+    DialogExampleComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

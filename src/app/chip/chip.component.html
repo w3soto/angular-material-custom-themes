@@ -18,12 +18,18 @@
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog default
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
         </mat-chip>
         <mat-chip *ngFor="let c of allColors" selected [color]="c">
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog {{ c }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
         </mat-chip>
         <mat-chip disabled>
           <mat-chip-avatar>
@@ -80,12 +86,18 @@
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog default
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
         </mat-chip>
         <mat-chip *ngFor="let c of allColors" selected [color]="c" dense>
           <mat-chip-avatar>
             <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
           </mat-chip-avatar>
           Dog {{ c }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
         </mat-chip>
         <mat-chip dense disabled>
           <mat-chip-avatar>

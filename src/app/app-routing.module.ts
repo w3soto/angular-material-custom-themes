@@ -22,6 +22,7 @@ import { SnackbarComponent } from "./snackbar/snackbar.component";
 import { CardComponent } from "./card/card.component";
 import { IconComponent } from "./icon/icon.component";
 import { DialogComponent } from "./dialog/dialog.component";
+import { PaginatorComponent } from "./paginator/paginator.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'badge', pathMatch: 'full'},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path: 'icon', component: IconComponent},
   {path: 'list', component: ListComponent},
   {path: 'menu', component: MenuComponent},
+  {path: 'paginator', component: PaginatorComponent},
   {path: 'progress-bar', component: ProgressBarComponent},
   {path: 'progress-spinner', component: ProgressSpinnerComponent},
   {path: 'radio-button', component: RadioButtonComponent},
