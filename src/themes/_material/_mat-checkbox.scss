@@ -7,37 +7,26 @@
   $config: theming.get-color-config($theme);
 
   $primary: map.get($config, primary);
-  $primary-contrast: map.get($primary, contrast);
-
   $accent: map.get($config, accent);
-  $accent-contrast: map.get($accent, contrast);
-
   $warn: map.get($config, warn);
-  $warn-contrast: map.get($warn, contrast);
 
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-checkbox-indeterminate,
   .mat-checkbox-checked {
 
-    &[color=primary],
-    &.mat-primary {
-      .mat-checkbox-checkmark-path {
-        stroke: map.get($primary-contrast, main) !important;
-      }
-    }
-
-    &[color=accent],
-    &.mat-accent {
-      .mat-checkbox-checkmark-path {
-        stroke: map.get($accent-contrast, main) !important;
-      }
-    }
-
-    &[color=warn],
-    &.mat-warn {
-      .mat-checkbox-checkmark-path {
-        stroke: map.get($warn-contrast, main) !important;
+    @each $key, $palette in ((primary, $primary), (accent, $accent), (warn, $warn)) {
+      &[color=#{$key}],
+      &.mat-#{$key} {
+        .mat-checkbox-background {
+          background-color: theming.get-color-from-palette($palette, default);
+        }
+        .mat-checkbox-checkmark-path {
+          stroke: theming.get-color-from-palette($palette, default-contrast) !important;
+        }
+        .mat-checkbox-mixedmark {
+          background-color: theming.get-color-from-palette($palette, default-contrast) !important;
+        }
       }
     }
 
@@ -45,11 +34,13 @@
       &[color=#{$key}],
       &.mat-#{$key} {
         .mat-checkbox-background {
-          background-color: map.get($palette, main);
+          background-color: theming.get-color-from-palette($palette, default);
         }
-        $contrast: map.get($palette, contrast);
         .mat-checkbox-checkmark-path {
-          stroke: map.get($contrast, main) !important;
+          stroke: theming.get-color-from-palette($palette, default-contrast) !important;
+        }
+        .mat-checkbox-mixedmark {
+          background-color: theming.get-color-from-palette($palette, default-contrast) !important;
         }
       }
     }

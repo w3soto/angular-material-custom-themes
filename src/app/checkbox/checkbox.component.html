@@ -25,16 +25,26 @@
 
   <mat-card>
     <mat-card-title>Checkbox colors</mat-card-title>
-    <mat-card-content>
 
+    <mat-card-content>
       <mat-checkbox
         *ngFor="let c of allColors"
         checked
         [color]="c"
         checked>{{ c | titlecase }} checkbox
       </mat-checkbox>
-
     </mat-card-content>
+
+    <mat-card-content>
+      <mat-checkbox
+        *ngFor="let c of allColors"
+        indeterminate
+        checked
+        [color]="c"
+        checked>{{ c | titlecase }} checkbox
+      </mat-checkbox>
+    </mat-card-content>
+
   </mat-card>
 
 </section>
