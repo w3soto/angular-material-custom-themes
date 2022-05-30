@@ -2,13 +2,15 @@
 
 Custom Angular Material themes (dark & light)
 
+[Demo](https://angular-material-custom-themes.web.app/)
+
 * Arc light/dark
 * Transparent light/dark
 
 ## Features
 * More colors (secondary, info, success, caution)
-* Dense variants (Button, Button Toggle, Form field, Chip, List, MenuItem, Tabs, Table, Toolbar)
-* Form field [hide-error] and [hide-hint] attributes
+* Dense and compact variants (Button, Button Toggle, Form field, Chip, List, MenuItem, Tabs, Table, Toolbar)
+* Form field [hide-subscript] attribute
 
 ## TODO
 * Add compact variants
