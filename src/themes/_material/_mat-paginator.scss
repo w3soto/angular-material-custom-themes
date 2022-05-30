@@ -9,10 +9,12 @@
 @mixin typography($theme) {
   $config: theming.get-typography-config($theme);
 
-  .mat-paginator {
-    .mat-paginator-container {
-      padding: 8px 8px;
-    }
+  .mat-paginator-container {
+    padding: 8px 8px;
+  }
+  .mat-paginator-range-label {
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
 }
