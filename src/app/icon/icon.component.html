@@ -12,11 +12,13 @@
     <mat-card-content>
 
       <div>
+        <mat-icon>verified</mat-icon>
         <mat-icon *ngFor="let c of allColors" [color]="c">verified</mat-icon>
       </div>
 
       <div>
-        <button *ngFor="let c of allColors" mat-stroked-button><mat-icon [color]="c">verified</mat-icon> Verified</button>
+        <button mat-stroked-button><mat-icon>verified</mat-icon> Default</button>
+        <button *ngFor="let c of allColors" mat-stroked-button><mat-icon [color]="c">verified</mat-icon> {{ c | titlecase }}</button>
       </div>
 
     </mat-card-content>
@@ -27,6 +29,7 @@
     <mat-card-content>
 
       <div>
+        <mat-icon dense>verified</mat-icon>
         <mat-icon *ngFor="let c of allColors" [color]="c" dense>verified</mat-icon>
       </div>
 

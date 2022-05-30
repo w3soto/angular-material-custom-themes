@@ -14,11 +14,13 @@
   .mat-card-content {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 24px;
 
     div {
       display: flex;
       gap: 8px;
+      flex-wrap: wrap;
     }
   }
 
