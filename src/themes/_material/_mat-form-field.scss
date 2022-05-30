@@ -26,7 +26,8 @@
   .mat-datepicker-toggle,
   .mat-select,
   .mat-input-element,
-  .mat-form-field-label mat-label {
+  .mat-form-field-label mat-label,
+  .mat-form-field-required-marker {
     font-size: $base-input-font-size;
   }
   .mat-form-field-subscript-wrapper {
@@ -75,6 +76,14 @@
 
 
 @mixin color($theme) {
+
+  $config: theming.get-color-config($theme);
+  $warn: map.get($config, warn);
+
+  .mat-form-field .mat-form-field-required-marker {
+    color: theming.get-color-from-palette($warn);
+  }
+
 }
 
 
