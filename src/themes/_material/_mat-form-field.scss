@@ -112,58 +112,31 @@
   }
 }
 
-/*
-@mixin _custom-hide-floating-label() {
-
-  &.mat-form-field-can-float.mat-form-field-should-float,
-  &.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper {
-    .mat-form-field-label {
-      display: none;
-    }
-  }
-
-  // outline
-  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-outline-gap {
-    border-color: currentColor;
-  }
-
-  // fill
-  &.mat-form-field-appearance-fill .mat-form-field-infix {
-    padding-top: 0;
-    padding-bottom: 1em;
-  }
-
-  // standard
-  &.mat-form-field-appearance-standard .mat-form-field-infix {
-    padding: 0 0 1em;
-    .mat-form-field-label {
-      top: 0.625em;
-    }
-  }
-
-  // legacy
-  &.mat-form-field-appearance-legacy .mat-form-field-infix {
-    //padding: 0 0 1em;
-    .mat-form-field-label {
-      top: 0.625em;
-    }
-  }
-}
-*/
-
 @mixin color($theme) {
 
   $config: theming.get-color-config($theme);
+  $foreground: map.get($config, foreground);
   $warn: map.get($config, warn);
 
   .mat-form-field .mat-form-field-required-marker {
     color: theming.get-color-from-palette($warn);
   }
 
+  .mat-input-element::placeholder {
+    color: transparentize(map.get($foreground, secondary-text), .3);
+  }
+
 }
 
 
 @mixin typography($theme) {
+
+  $config: theming.get-typography-config($theme);
+
+  .mat-input-element::placeholder {
+    letter-spacing: map.get(map.get($config, input), letter-spacing);
+  }
+
 }
 
 
