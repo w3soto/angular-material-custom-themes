@@ -189,4 +189,29 @@
     </mat-card-content>
   </mat-card>
 
+  <mat-card>
+    <mat-card-title>Compact variants</mat-card-title>
+
+    <mat-card-content class="col">
+
+      <div>
+        <mat-button-toggle-group compact name="fontStyle" aria-label="Font Style" color="secondary">
+          <mat-button-toggle *ngFor="let c of matColors" [value]="c" [attr.color]="c">
+            <mat-icon>not_started</mat-icon> {{ c | titlecase }}
+          </mat-button-toggle>
+          <mat-button-toggle value="disabled" disabled>Disabled</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div>
+        <mat-button-toggle-group compact name="fontStyle" aria-label="Font Style" color="secondary" appearance="legacy">
+          <mat-button-toggle *ngFor="let c of matColors" [value]="c" [attr.color]="c">
+            <mat-icon>not_started</mat-icon> {{ c | titlecase }}
+          </mat-button-toggle>
+          <mat-button-toggle value="disabled" disabled>Disabled</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
 </section>

@@ -131,7 +131,10 @@
 @mixin density($theme) {
 
   $dense-size: 32px;
-  $dense-icon-size: 16px;
+  $dense-icon-size: 20px;
+
+  $compact-size: 28px;
+  $compact-icon-size: 20px;
 
   .mat-button-toggle-group[dense]  .mat-button-toggle-label-content {
     line-height: $dense-size;
@@ -142,7 +145,7 @@
       line-height: $dense-icon-size;
     }
   }
-  .mat-button-toggle-appearance-standard[dense] .mat-button-toggle-label-content {
+  .mat-button-toggle-group-appearance-standard[dense] .mat-button-toggle-label-content {
     line-height: $dense-size - 2px; // top/bottom border
     .mat-icon {
       height: $dense-icon-size;
@@ -152,6 +155,29 @@
     }
   }
 
+  .mat-button-toggle-group[compact]  .mat-button-toggle-label-content {
+    line-height: $compact-size;
+    .mat-icon {
+      height: $compact-icon-size;
+      width: $compact-icon-size;
+      font-size: $compact-icon-size;
+      line-height: $compact-icon-size - 1px;
+    }
+  }
+  .mat-button-toggle-group-appearance-standard[compact] {
+    .mat-button-toggle {
+      max-height: $compact-size - 2px;
+      .mat-button-toggle-label-content {
+        line-height: $compact-size - 2px; // top/bottom border
+        .mat-icon {
+          height: $compact-icon-size;
+          width: $compact-icon-size;
+          font-size: $compact-icon-size;
+          line-height: $compact-icon-size - 1px;
+        }
+      }
+    }
+  }
 
 }
 
