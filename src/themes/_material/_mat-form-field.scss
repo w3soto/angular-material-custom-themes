@@ -106,7 +106,7 @@
 
   // legacy
   &.mat-form-field-appearance-legacy {
-    .mat-form-field-label {
+    .mat-form-field-label span {
       font-size: $base-input-font-size;
     }
   }
