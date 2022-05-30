@@ -52,13 +52,23 @@
   }
 
   .mat-card-title + .mat-divider + .mat-card-content,
-  .mat-card-subtitle + .mat-divider + .mat-card-content,
-  .mat-card-image + .mat-divider + .mat-card-content,
-  .mat-card-content + .mat-divider + .mat-card-content,
   .mat-card-title + .mat-divider + .mat-card-image,
-  .mat-card-subtitle + .mat-divider + .mat-card-image {
+  .mat-card-title + .mat-divider + .mat-card-subtitle,
+
+  .mat-card-subtitle + .mat-divider + .mat-card-content,
+  .mat-card-subtitle + .mat-divider + .mat-card-image,
+  .mat-card-subtitle + .mat-divider + .mat-card-subtitle,
+
+  .mat-card-image + .mat-divider + .mat-card-content,
+  .mat-card-image + .mat-divider + .mat-card-image,
+  .mat-card-image + .mat-divider + .mat-card-subtitle,
+
+  .mat-card-content + .mat-divider + .mat-card-content,
+  .mat-card-content + .mat-divider + .mat-card-image,
+  .mat-card-content + .mat-divider + .mat-card-subtitle {
     margin-top: 32px;
   }
+
   .mat-card-header + .mat-divider + .mat-card-content,
   .mat-card-header + .mat-divider + .mat-card-image {
     margin-top: 16px;
