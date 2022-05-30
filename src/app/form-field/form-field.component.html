@@ -5,106 +5,77 @@
                               target="_blank">Form field component</a>.
 </div>
 
+<section style="display: flex" class="search-toolbar">
+
+  <mat-form-field appearance="outline" hide-subscript dense style="width: 100%">
+    <input matInput placeholder="Search field...">
+    <mat-icon matSuffix>help</mat-icon>
+  </mat-form-field>
+
+
+
+</section>
+
 <section [formGroup]="form">
 
-  <mat-card>
+  <mat-card *ngFor="let a of ['outline', 'fill', 'standard', 'legacy']">
 
-    <mat-card-title>Outline</mat-card-title>
+    <mat-card-title>{{ a | titlecase }}</mat-card-title>
     <mat-card-content>
-      <mat-form-field appearance="outline">
-        <mat-label>Default required input</mat-label>
-        <input matInput formControlName="textRequired">
+
+      <mat-form-field [appearance]="$any(a)">
+        <mat-label>Required input</mat-label>
+        <input matInput [formControl]="$any(form.controls[a])" placeholder="Required input">
         <mat-icon matPrefix>shopping_cart</mat-icon>
         <mat-icon matSuffix>done</mat-icon>
         <mat-hint>Lorem ipsum dolor</mat-hint>
         <mat-error>Some error message</mat-error>
       </mat-form-field>
 
-      <div class="caption">Dense variant</div>
-      <mat-form-field appearance="outline" dense>
+      <mat-form-field [appearance]="$any(a)" hide-subscript>
         <mat-label>Default input</mat-label>
-        <input matInput formControlName="textRequired">
+        <input matInput placeholder="Default input">
         <mat-icon matPrefix>shopping_cart</mat-icon>
         <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
+        <mat-hint>Hint text</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field [appearance]="$any(a)" hide-subscript>
+        <input matInput placeholder="Default input without label">
+        <mat-icon matPrefix>shopping_cart</mat-icon>
+        <mat-icon matSuffix>done</mat-icon>
       </mat-form-field>
 
     </mat-card-content>
 
-  </mat-card>
+    <mat-divider></mat-divider>
 
-  <mat-card>
-    <mat-card-title>Fill</mat-card-title>
+    <mat-card-subtitle>Dense variant</mat-card-subtitle>
     <mat-card-content>
-      <mat-form-field appearance="fill">
-        <mat-label>Default required input</mat-label>
-        <input matInput formControlName="textRequired">
-        <mat-icon matPrefix>shopping_cart</mat-icon>
-        <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
-      </mat-form-field>
-
-      <div class="caption">Dense variant</div>
-      <mat-form-field appearance="fill" dense>
+      <mat-form-field [appearance]="$any(a)" dense hide-subscript>
         <mat-label>Default input</mat-label>
-        <input matInput formControlName="textRequired">
+        <input matInput>
         <mat-icon matPrefix>shopping_cart</mat-icon>
         <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
+      </mat-form-field>
+      <mat-form-field [appearance]="$any(a)" dense hide-subscript>
+        <input matInput placeholder="Default input without label">
+        <mat-icon matPrefix>shopping_cart</mat-icon>
+        <mat-icon matSuffix>done</mat-icon>
       </mat-form-field>
     </mat-card-content>
-  </mat-card>
 
-  <mat-card>
-    <mat-card-title>Standard</mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-subtitle>Compact variant</mat-card-subtitle>
     <mat-card-content>
-      <mat-form-field appearance="standard">
-        <mat-label>Default required input</mat-label>
-        <input matInput formControlName="textRequired">
+      <mat-form-field [appearance]="$any(a)" compact hide-subscript>
         <mat-icon matPrefix>shopping_cart</mat-icon>
         <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
-      </mat-form-field>
-
-      <div class="caption">Dense variant</div>
-      <mat-form-field appearance="standard" dense>
-        <mat-label>Default input</mat-label>
-        <input matInput formControlName="textRequired">
-        <mat-icon matPrefix>shopping_cart</mat-icon>
-        <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
+        <input matInput placeholder="Default input without label">
       </mat-form-field>
     </mat-card-content>
-  </mat-card>
 
-  <mat-card>
-    <mat-card-title>Legacy</mat-card-title>
-    <mat-card-content>
-
-      <mat-form-field appearance="legacy">
-        <mat-label>Default input</mat-label>
-        <input matInput formControlName="textRequired">
-        <mat-icon matPrefix>shopping_cart</mat-icon>
-        <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
-      </mat-form-field>
-
-      <div class="caption">Dense variant</div>
-      <mat-form-field appearance="legacy" dense>
-        <mat-label>Default input</mat-label>
-        <input matInput formControlName="textRequired">
-        <mat-icon matPrefix>shopping_cart</mat-icon>
-        <mat-icon matSuffix>done</mat-icon>
-        <mat-hint>Lorem ipsum dolor</mat-hint>
-        <mat-error>Some error message</mat-error>
-      </mat-form-field>
-    </mat-card-content>
   </mat-card>
 
 </section>

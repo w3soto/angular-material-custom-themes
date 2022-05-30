@@ -33,8 +33,10 @@ export class FormFieldComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      'text': [''],
-      'textRequired': ['', Validators.required]
+      'outline': ['', Validators.required],
+      'fill': ['', Validators.required],
+      'standard': ['', Validators.required],
+      'legacy': ['', Validators.required],
     });
   }
 
