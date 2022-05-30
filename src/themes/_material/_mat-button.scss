@@ -63,12 +63,6 @@
 
   $standard-size: 40px;
 
-  $dense-size: 32px;
-  $dense-icon-size: 20px;
-
-  $compact-size: 32px;
-  $compact-icon-size: 16px;
-
   .mat-button,
   .mat-raised-button,
   .mat-stroked-button,
@@ -87,37 +81,50 @@
     line-height: $standard-size - 2px; // top/bottom border
   }
 
-  .mat-button,
-  .mat-raised-button,
-  .mat-stroked-button,
-  .mat-flat-button,
-  .mat-icon-button,
-  .mat-mini-fab {
-    &[dense] {
-      line-height: $dense-size;
-      .mat-icon {
-        height: $dense-icon-size;
-        width: $dense-icon-size;
-        font-size: $dense-icon-size;
-        line-height: $dense-icon-size;
+  // custom sizes
+  $sizes: (
+    dense: (
+      size: 32px,
+      icon-size: 20px
+    ),
+    compact: (
+      size: 28px,
+      icon-size: 20px
+    )
+  );
+
+  @each $name, $config in $sizes {
+    .mat-button,
+    .mat-raised-button,
+    .mat-flat-button,
+    .mat-stroked-button,
+    .mat-icon-button,
+    .mat-mini-fab {
+      &[#{$name}] {
+        line-height: map.get($config, size);
+        .mat-icon {
+          height: map.get($config, icon-size);
+          width: map.get($config, icon-size);
+          font-size: map.get($config, icon-size);
+          line-height: map.get($config, icon-size);
+        }
       }
     }
-  }
-
-  .mat-icon-button {
-    &[dense] {
-      line-height: $dense-icon-size;
-      width: $dense-size;
-      height: $dense-size;
+    .mat-stroked-button[#{$name}] {
+      line-height: map.get($config, size) - 2px;
     }
-  }
-
-  .mat-mini-fab[dense] {
-    width: $dense-size;
-    height: $dense-size;
-    .mat-button-wrapper {
-      line-height: $dense-icon-size;
-      padding: 4px 0;
+    .mat-icon-button[#{$name}] {
+      line-height: map.get($config, icon-size);
+      width: map.get($config, size);
+      height: map.get($config, size);
+    }
+    .mat-mini-fab[#{$name}] {
+      width: map.get($config, size);
+      height: map.get($config, size);
+      .mat-button-wrapper {
+        line-height: map.get($config, icon-size);
+        padding: 4px 0;
+      }
     }
   }
 
