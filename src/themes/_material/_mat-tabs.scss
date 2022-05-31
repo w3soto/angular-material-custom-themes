@@ -99,17 +99,45 @@
 
 @mixin density($theme) {
 
-  .mat-tab-group[dense],
-  .mat-tab-nav-bar[dense] {
-    .mat-tab-label,
-    .mat-tab-link {
-      height: 40px;
+  // custom sizes
+  $sizes: (
+    dense: (
+      size: 40px,
+      icon-size: 24px
+    ),
+    compact: (
+      size: 32px,
+      icon-size: 20px
+    )
+  );
+
+  @each $name, $config in $sizes {
+    .mat-tab-group[#{$name}],
+    .mat-tab-nav-bar[#{$name}] {
+      .mat-tab-label,
+      .mat-tab-link {
+        height: map.get($config, size);
+
+        .mat-icon {
+          height: map.get($config, icon-size);
+          width: map.get($config, icon-size);
+          font-size: map.get($config, icon-size);
+          line-height: map.get($config, icon-size);
+        }
+      }
     }
   }
 
 }
 
+@mixin typography($theme) {
+  .mat-tab-label .mat-tab-label-content {
+    gap: 4px;
+  }
+}
+
 @mixin theme($theme) {
   @include color($theme);
   @include density($theme);
+  @include typography($theme);
 }
