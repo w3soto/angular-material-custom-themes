@@ -58,26 +58,32 @@
     <mat-card-title>Tab dense variant</mat-card-title>
     <mat-card-content>
 
-      <mat-tab-group color="primary" backgroundColor="primary" dense>
+      <mat-tab-group color="primary" dense>
         <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon>thumb_up</mat-icon>
-            First
-          </ng-template>
+          <ng-template mat-tab-label><mat-icon>thumb_up</mat-icon>First</ng-template>
           First content...
         </mat-tab>
         <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon>verified</mat-icon>
-            Second
-          </ng-template>
+          <ng-template mat-tab-label><mat-icon>verified</mat-icon>Second</ng-template>
           Second content...
         </mat-tab>
         <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon>done</mat-icon>
-            Third
-          </ng-template>
+          <ng-template mat-tab-label><mat-icon>done</mat-icon>Third</ng-template>
+          Third content...
+        </mat-tab>
+      </mat-tab-group>
+
+      <mat-tab-group color="primary" [backgroundColor]="$any('caution')" dense>
+        <mat-tab>
+          <ng-template mat-tab-label><mat-icon>thumb_up</mat-icon>First</ng-template>
+          First content...
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label><mat-icon>verified</mat-icon>Second</ng-template>
+          Second content...
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label><mat-icon>done</mat-icon>Third</ng-template>
           Third content...
         </mat-tab>
       </mat-tab-group>
@@ -88,24 +94,33 @@
     <mat-card-subtitle>Compact</mat-card-subtitle>
     <mat-card-content>
 
-      <mat-tab-group color="primary" backgroundColor="primary" compact>
+      <mat-tab-group color="primary" compact>
         <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon>thumb_up</mat-icon>
-            First
-          </ng-template>
+          <ng-template mat-tab-label><mat-icon>thumb_up</mat-icon>First</ng-template>
+          First content...
         </mat-tab>
         <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon>verified</mat-icon>
-            Second
-          </ng-template>
+          <ng-template mat-tab-label><mat-icon>verified</mat-icon>Second</ng-template>
+          Second content...
         </mat-tab>
         <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon>done</mat-icon>
-            Third
-          </ng-template>
+          <ng-template mat-tab-label><mat-icon>done</mat-icon>Third</ng-template>
+          Third content...
+        </mat-tab>
+      </mat-tab-group>
+
+      <mat-tab-group color="primary" [backgroundColor]="$any('caution')" compact>
+        <mat-tab>
+          <ng-template mat-tab-label><mat-icon>thumb_up</mat-icon>First</ng-template>
+          First content...
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label><mat-icon>verified</mat-icon>Second</ng-template>
+          Second content...
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label><mat-icon>done</mat-icon>Third</ng-template>
+          Third content...
         </mat-tab>
       </mat-tab-group>
 
