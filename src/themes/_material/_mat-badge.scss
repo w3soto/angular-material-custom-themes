@@ -25,38 +25,68 @@
 
 @mixin typography($theme) {
 
-  .mat-badge[matBadgeShape=square] .mat-badge-content {
+  .mat-badge[matBadgeShape=square] .mat-badge-content,
+  .mat-badge[matBadgeShape=rectangle] .mat-badge-content {
     border-radius: 4px;
   }
 
   .mat-badge[matBadgeShape=rectangle] .mat-badge-content {
-    border-radius: 4px;
     width: auto;
     padding: 0 4px;
   }
 
-  .mat-badge.mat-badge-before[matBadgeShape=rectangle] .mat-badge-content {
-    left: auto;
-    right: 100%;
-    margin-right: 4px;
-  }
+  .mat-badge[matBadgeShape=rectangle] {
 
-  .mat-badge.mat-badge-after[matBadgeShape=rectangle] .mat-badge-content {
-    right: auto;
-    left: 100%;
-    margin-left: 4px;
-  }
+    // before
+    &.mat-badge-before .mat-badge-content {
+      left: auto;
+      right: 100%;
+      margin-right: 4px;
+    }
 
-  .mat-button-base.mat-badge.mat-badge-before[matBadgeShape=rectangle] .mat-badge-content {
-    left: -4px;
-    margin-left: 0;
-    right: auto;
-  }
+    // before + button
+    &.mat-badge-before.mat-badge-overlap,
+    &.mat-badge-before.mat-button-base {
+      .mat-badge-content {
+        right: auto;
+        margin-right: 0;
+      }
+      &.mat-badge-small .mat-badge-content {
+        left: -4px;
+      }
+      &.mat-badge-medium .mat-badge-content {
+        left: -6px;
+      }
+      &.mat-badge-large .mat-badge-content {
+        left: -14px;
+      }
+    }
 
-  .mat-button-base.mat-badge.mat-badge-after[matBadgeShape=rectangle] .mat-badge-content {
-    left: auto;
-    margin-left: 0;
-    right: -4px;
+    // after
+    &.mat-badge-after .mat-badge-content {
+      right: auto;
+      left: 100%;
+      margin-left: 4px;
+    }
+
+    // after + button
+    &.mat-badge-after.mat-badge-overlap,
+    &.mat-badge-after.mat-button-base {
+      .mat-badge-content {
+        left: auto;
+        margin-left: 0;
+      }
+      &.mat-badge-small .mat-badge-content {
+        right: -4px;
+      }
+      &.mat-badge-medium .mat-badge-content {
+        right: -6px;
+      }
+      &.mat-badge-large .mat-badge-content {
+        right: -14px;
+      }
+    }
+
   }
 
 }

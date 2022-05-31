@@ -1,7 +1,8 @@
 <h2 class="title">Badge</h2>
 
 <div>
-  See Angular's Material's <a color="primary" href="https://material.angular.io/components/badge/overview" target="_blank">Badge component</a> and
+  See Angular's Material's <a color="primary" href="https://material.angular.io/components/badge/overview"
+                              target="_blank">Badge component</a> and
   <a href="https://github.com/angular/components/tree/main/src/material/badge" target="_blank">source code</a>.
 </div>
 
@@ -11,7 +12,7 @@
     <mat-card-title>Badge examples</mat-card-title>
     <mat-card-content>
       <p>
-        <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+        <span matBadge="4" matBadgeOverlap="true">Text with a badge</span>
       </p>
       <p>
         <span matBadge="4" matBadgeSize="small" matBadgeOverlap="false">Text with small badge</span>
@@ -32,20 +33,69 @@
         </button>
       </p>
       <p>
-        Icon with a badge <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+        Icon with a badge
+        <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
       </p>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <p>
+        <span matBadge="Right" matBadgeOverlap="false" matBadgeShape="rectangle">Text with rectangle badge on the right</span>
+      </p>
+      <p>
+        <span matBadge="Right" matBadgeOverlap="true" matBadgeShape="rectangle">Text with rectangle overlap badge on the right</span>
+      </p>
+      <p style="padding-left: 35px;">
+        <span matBadge="Left" matBadgeOverlap="false" matBadgePosition="before" matBadgeShape="rectangle">Text with rectangle badge on the left</span>
+      </p>
+      <p style="padding-left: 6px;">
+        <span matBadge="Left" matBadgeOverlap="true" matBadgePosition="before" matBadgeShape="rectangle">Text with rectangle overlap badge on the left</span>
+      </p>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
       <p>
         Button with rectangle badge on the right
-        <button mat-stroked-button color="accent" matBadge="Rectangle badge" matBadgeSize="small" matBadgeColor="warn" matBadgeShape="rectangle">
-          Button with badge
+      </p>
+      <p style="display: flex; gap: 16px; flex-wrap: wrap">
+        <button
+          *ngFor="let size of ['small', 'medium', 'large']"
+          mat-flat-button
+          color="primary"
+          matBadge="Rectangle badge"
+          [matBadgeSize]="$any(size)"
+          matBadgeColor="warn"
+          matBadgeShape="rectangle">
+          Button with <strong>{{ size }}</strong> badge
         </button>
       </p>
+
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
       <p>
         Button with rectangle badge on the left
-        <button mat-stroked-button color="success" matBadge="Rectangle badge" matBadgePosition="before" matBadgeSize="small" matBadgeColor="warn" matBadgeShape="rectangle">
-          Button with badge
+      </p>
+      <p style="display: flex; gap: 16px; flex-wrap: wrap">
+        <button
+          *ngFor="let size of ['small', 'medium', 'large']"
+          mat-flat-button
+          color="primary"
+          matBadge="Rectangle badge"
+          matBadgePosition="before"
+          [matBadgeSize]="$any(size)"
+          matBadgeColor="warn"
+          matBadgeShape="rectangle">
+          Button with <strong>{{ size }}</strong> badge
         </button>
       </p>
+
     </mat-card-content>
   </mat-card>
 
@@ -78,7 +128,8 @@
     <mat-card-title>Sizes</mat-card-title>
     <mat-card-content>
       <p *ngFor="let size of ['small', 'medium', 'large']">
-        <span matBadge="Some text" matBadgeOverlap="false" matBadgePosition="after" [matBadgeSize]="$any(size)" matBadgeShape="rectangle">Text with a <strong>{{ size }}</strong> badge</span>
+        <span matBadge="Some text" matBadgeOverlap="false" matBadgePosition="after" [matBadgeSize]="$any(size)"
+              matBadgeShape="rectangle">Text with a <strong>{{ size }}</strong> badge</span>
       </p>
     </mat-card-content>
   </mat-card>
