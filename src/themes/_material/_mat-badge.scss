@@ -44,9 +44,8 @@
       margin-right: 4px;
     }
 
-    // before + button
-    &.mat-badge-before.mat-badge-overlap,
-    &.mat-badge-before.mat-button-base {
+    // before + overlap
+    &.mat-badge-before.mat-badge-overlap {
       .mat-badge-content {
         right: auto;
         margin-right: 0;
@@ -69,9 +68,8 @@
       margin-left: 4px;
     }
 
-    // after + button
-    &.mat-badge-after.mat-badge-overlap,
-    &.mat-badge-after.mat-button-base {
+    // after + overlap
+    &.mat-badge-after.mat-badge-overlap {
       .mat-badge-content {
         left: auto;
         margin-left: 0;
