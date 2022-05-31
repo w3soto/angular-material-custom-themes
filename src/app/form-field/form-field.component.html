@@ -2,7 +2,8 @@
 
 <div>
   See Angular's Material's <a color="primary" href="https://material.angular.io/components/form-field/overview"
-                              target="_blank">Form field component</a>.
+                              target="_blank">Form field component</a> and
+  <a href="https://github.com/angular/components/tree/main/src/material/form-field" target="_blank">source code</a>.
 </div>
 
 <section style="display: flex" class="search-toolbar">
@@ -46,6 +47,11 @@
         <mat-icon matSuffix>done</mat-icon>
       </mat-form-field>
 
+      <mat-form-field [appearance]="$any(a)" hide-subscript>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput placeholder="Textarea" rows="5"></textarea>
+      </mat-form-field>
+
     </mat-card-content>
 
     <mat-divider></mat-divider>
@@ -63,17 +69,36 @@
         <mat-icon matPrefix>shopping_cart</mat-icon>
         <mat-icon matSuffix>done</mat-icon>
       </mat-form-field>
+
+      <mat-form-field [appearance]="$any(a)" dense hide-subscript>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput placeholder="Textarea" rows="5"></textarea>
+      </mat-form-field>
+
     </mat-card-content>
 
     <mat-divider></mat-divider>
 
     <mat-card-subtitle>Compact variant</mat-card-subtitle>
     <mat-card-content>
+
+      <mat-form-field [appearance]="$any(a)" compact hide-subscript>
+        <mat-label>Default input</mat-label>
+        <mat-icon matPrefix>shopping_cart</mat-icon>
+        <mat-icon matSuffix>done</mat-icon>
+        <input matInput placeholder="Default input">
+      </mat-form-field>
+
       <mat-form-field [appearance]="$any(a)" compact hide-subscript>
         <mat-icon matPrefix>shopping_cart</mat-icon>
         <mat-icon matSuffix>done</mat-icon>
         <input matInput placeholder="Default input without label">
       </mat-form-field>
+
+      <mat-form-field [appearance]="$any(a)" compact hide-subscript>
+        <textarea matInput placeholder="Textarea" rows="5"></textarea>
+      </mat-form-field>
+
     </mat-card-content>
 
   </mat-card>

@@ -1,10 +1,54 @@
 <h2 class="title">Badge</h2>
 
 <div>
-  See Angular's Material's <a color="primary" href="https://material.angular.io/components/badge/overview" target="_blank">Badge component</a>.
+  See Angular's Material's <a color="primary" href="https://material.angular.io/components/badge/overview" target="_blank">Badge component</a> and
+  <a href="https://github.com/angular/components/tree/main/src/material/badge" target="_blank">source code</a>.
 </div>
 
 <section>
+
+  <mat-card>
+    <mat-card-title>Badge examples</mat-card-title>
+    <mat-card-content>
+      <p>
+        <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+      </p>
+      <p>
+        <span matBadge="4" matBadgeSize="small" matBadgeOverlap="false">Text with small badge</span>
+      </p>
+      <p>
+        <span matBadge="1" matBadgeSize="large" matBadgeOverlap="false">Text with large badge</span>
+      </p>
+      <p>
+        Button with a badge on the left
+        <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" [matBadgeColor]="$any('info')">
+          Action
+        </button>
+      </p>
+      <p>
+        Button with badge on the right
+        <button mat-raised-button color="accent" matBadge="7" matBadgeColor="primary" [matBadgeColor]="$any('warn')">
+          Button
+        </button>
+      </p>
+      <p>
+        Icon with a badge <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+      </p>
+      <p>
+        Button with rectangle badge on the right
+        <button mat-stroked-button color="accent" matBadge="Rectangle badge" matBadgeSize="small" matBadgeColor="warn" matBadgeShape="rectangle">
+          Button with badge
+        </button>
+      </p>
+      <p>
+        Button with rectangle badge on the left
+        <button mat-stroked-button color="success" matBadge="Rectangle badge" matBadgePosition="before" matBadgeSize="small" matBadgeColor="warn" matBadgeShape="rectangle">
+          Button with badge
+        </button>
+      </p>
+    </mat-card-content>
+  </mat-card>
+
   <mat-card>
     <mat-card-title>Text badges</mat-card-title>
     <mat-card-content>
