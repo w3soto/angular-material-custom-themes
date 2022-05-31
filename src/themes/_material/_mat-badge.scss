@@ -9,7 +9,6 @@
   .mat-badge {
     @each $key, $palette in $custom-palettes {
       $contrast: map.get($palette, contrast);
-      &[color=#{$key}],
       &-#{$key} {
         .mat-badge-content {
           background-color: map.get($palette, main);
