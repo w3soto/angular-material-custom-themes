@@ -32,6 +32,11 @@
 
   .mat-toolbar-row[dense],
   .mat-toolbar-single-row[dense] {
+    height: 56px;
+  }
+
+  .mat-toolbar-row[compact],
+  .mat-toolbar-single-row[compact] {
     height: 48px;
   }
 
