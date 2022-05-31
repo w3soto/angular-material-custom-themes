@@ -56,6 +56,18 @@
 
 
 @mixin typography($theme) {
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button,
+  .mat-flat-button {
+    min-width: 2em;
+    .mat-button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+  }
 }
 
 
@@ -65,16 +77,8 @@
 
   .mat-button,
   .mat-raised-button,
-  .mat-stroked-button,
   .mat-flat-button {
-    min-width: 2em;
     line-height: $standard-size;
-    .mat-button-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 4px;
-    }
   }
 
   .mat-stroked-button {
