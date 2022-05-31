@@ -22,10 +22,19 @@
     <mat-card-content>
       <p *ngFor="let c of allColors" style="margin-bottom: 24px;">
         Button with a badge on the left
-        <button mat-raised-button color="primary"
-                matBadge="8" matBadgePosition="after" [matBadgeColor]="$any(c)">
+        <button mat-raised-button color="primary" matBadgeSize="small"
+                matBadge="8" matBadgePosition="before" [matBadgeColor]="$any(c)">
           Action
         </button>
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Sizes</mat-card-title>
+    <mat-card-content>
+      <p *ngFor="let size of ['small', 'medium', 'large']">
+        <span matBadge="Some text" matBadgeOverlap="false" matBadgePosition="after" [matBadgeSize]="$any(size)" matBadgeShape="rectangle">Text with a <strong>{{ size }}</strong> badge</span>
       </p>
     </mat-card-content>
   </mat-card>

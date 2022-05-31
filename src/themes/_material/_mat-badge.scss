@@ -7,7 +7,6 @@
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-badge {
-
     @each $key, $palette in $custom-palettes {
       $contrast: map.get($palette, contrast);
       &[color=#{$key}],
@@ -20,7 +19,45 @@
         }
       }
     }
+  }
 
+}
+
+
+@mixin typography($theme) {
+
+  .mat-badge[matBadgeShape=square] .mat-badge-content {
+    border-radius: 4px;
+  }
+
+  .mat-badge[matBadgeShape=rectangle] .mat-badge-content {
+    border-radius: 4px;
+    width: auto;
+    padding: 0 4px;
+  }
+
+  .mat-badge.mat-badge-before[matBadgeShape=rectangle] .mat-badge-content {
+    left: auto;
+    right: 100%;
+    margin-right: 4px;
+  }
+
+  .mat-badge.mat-badge-after[matBadgeShape=rectangle] .mat-badge-content {
+    right: auto;
+    left: 100%;
+    margin-left: 4px;
+  }
+
+  .mat-button-base.mat-badge.mat-badge-before[matBadgeShape=rectangle] .mat-badge-content {
+    left: -4px;
+    margin-left: 0;
+    right: auto;
+  }
+
+  .mat-button-base.mat-badge.mat-badge-after[matBadgeShape=rectangle] .mat-badge-content {
+    left: auto;
+    margin-left: 0;
+    right: -4px;
   }
 
 }
@@ -28,4 +65,5 @@
 
 @mixin theme($theme) {
   @include color($theme);
+  @include typography($theme);
 }
