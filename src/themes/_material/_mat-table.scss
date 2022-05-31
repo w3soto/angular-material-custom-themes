@@ -47,6 +47,16 @@
     }
   }
 
+  .mat-table[compact] {
+    tr.mat-header-row {
+      height: 40px;
+    }
+    tr.mat-row,
+    tr.mat-footer-row {
+      height: 32px;
+    }
+  }
+
 }
 
 
