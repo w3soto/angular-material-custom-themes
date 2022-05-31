@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+
+
+@mixin color($theme) {
+}
+
+
+@mixin typography($theme) {
+}
+
+
+@mixin density($theme) {
+
+  .mat-option[dense] {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .mat-option[compact] {
+    height: 32px;
+    line-height: 32px;
+    .mat-icon {
+      height: 20px;
+      width: 20px;
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+
+}
+
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include typography($theme);
+  @include density($theme);
+}

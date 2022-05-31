@@ -10,6 +10,7 @@
 @use "mat-icon" as icon;
 @use "mat-list" as list;
 @use "mat-menu" as menu;
+@use "mat-option" as option;
 @use "mat-paginator" as paginator;
 @use "mat-progress-bar" as progressBar;
 @use "mat-progress-spinner" as progressSpinner;
@@ -36,6 +37,7 @@
   @include icon.theme($theme);
   @include list.theme($theme);
   @include menu.theme($theme);
+  @include option.theme($theme);
   @include paginator.theme($theme);
   @include progressBar.theme($theme);
   @include progressSpinner.theme($theme);
