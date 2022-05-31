@@ -108,10 +108,10 @@ $theme: (
 
   background-color: $light-background;
 
-  a:not(.mat-button, .mat-list-item),
-  a:not(.mat-button, .mat-list-item):hover,
-  a:not(.mat-button, .mat-list-item):active,
-  a:not(.mat-button, .mat-list-item):visited {
+  a:not(.mat-button, .mat-list-item, .mat-tab-link),
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):hover,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):active,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):visited {
     color: map.get($theme-primary, default);
   }
 
