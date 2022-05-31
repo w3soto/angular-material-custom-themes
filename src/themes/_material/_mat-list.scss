@@ -24,16 +24,38 @@
     gap: 4px;
   }
 
-  // Dense list
-  .mat-list-base[dense] {
-    .mat-list-item {
-      font-size: map.get($subheading2, font-size);
-    }
-    .mat-list-option {
-      font-size: map.get($subheading2, font-size);
-    }
-    .mat-subheader {
-      font-size: map.get($body2, font-size);
+  // custom sizes
+  $sizes: (
+    dense: (
+      size: 40px,
+      icon-size: 24px
+    ),
+    compact: (
+      size: 32px,
+      icon-size: 20px
+    )
+  );
+
+  @each $name, $config in $sizes {
+    .mat-list-base[#{$name}] {
+      .mat-list-item {
+        font-size: map.get($subheading2, font-size);
+        height: map.get($config, size);
+      }
+      .mat-list-option {
+        font-size: map.get($subheading2, font-size);
+        height: map.get($config, size);
+      }
+      .mat-subheader {
+        font-size: map.get($body2, font-size);
+        height: map.get($config, size);
+      }
+      .mat-icon {
+        height: map.get($config, icon-size);
+        width: map.get($config, icon-size);
+        font-size: map.get($config, icon-size);
+        line-height: map.get($config, icon-size);
+      }
     }
   }
 

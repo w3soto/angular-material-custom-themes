@@ -40,8 +40,28 @@
 
       <div class="caption">Action list</div>
       <mat-action-list dense>
-        <button mat-list-item><mat-icon>done</mat-icon>Save</button>
-        <button mat-list-item><mat-icon>undo</mat-icon>Undo</button>
+        <button mat-list-item><mat-icon mat-list-icon>done</mat-icon>Save</button>
+        <button mat-list-item><mat-icon mat-list-icon>undo</mat-icon>Undo</button>
+      </mat-action-list>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Compact</mat-card-title>
+    <mat-card-content>
+
+      <div class="caption">List</div>
+      <mat-list compact>
+        <mat-list-item> Pepper </mat-list-item>
+        <mat-list-item> Salt </mat-list-item>
+        <mat-list-item> Paprika </mat-list-item>
+      </mat-list>
+
+      <div class="caption">Action list</div>
+      <mat-action-list compact>
+        <button mat-list-item><mat-icon mat-list-icon>done</mat-icon>Save</button>
+        <button mat-list-item><mat-icon mat-list-icon>undo</mat-icon>Undo</button>
       </mat-action-list>
 
     </mat-card-content>
