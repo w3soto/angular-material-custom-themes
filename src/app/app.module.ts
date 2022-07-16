@@ -11,7 +11,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { ButtonComponent } from "./button/button.component";
 import { BadgeComponent } from "./badge/badge.component";
 import { ChipComponent } from './chip/chip.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MenuComponent } from './menu/menu.component';
 import { ListComponent } from './list/list.component';
 import { TypographyComponent } from "./typography/typography.component";
@@ -66,6 +66,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
     MaterialModule,
 

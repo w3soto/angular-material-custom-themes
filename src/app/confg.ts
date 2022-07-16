@@ -12,7 +12,12 @@ export const CUSTOM_COLORS: string[] = [
   'secondary',
   'info',
   'success',
-  'caution'
+  'caution',
+
+  'candidate',
+  'contact',
+  'client',
+  'job'
 ];
 
 

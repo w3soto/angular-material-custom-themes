@@ -15,10 +15,9 @@ export interface Theme {
 export class AppComponent implements OnInit {
 
   themes: Theme[] = [
-    {name: 'Arc light', className: 'arc-light-theme', source: 'arc-light-theme.css'},
-    {name: 'Arc dark', className: 'arc-dark-theme', source: 'arc-dark-theme.css'},
-    {name: 'Transparent light', className: 'transparent-light-theme', source: 'transparent-light-theme.css'},
-    {name: 'Transparent dark', className: 'transparent-dark-theme', source: 'transparent-dark-theme.css'}
+    {name: 'Hireme', className: 'hireme-theme', source: 'hireme-theme.css'},
+    {name: 'Arc light', className: 'arc-light-theme', source: 'arc-theme.css'},
+    {name: 'Arc dark', className: 'arc-dark-theme', source: 'arc-theme.css'}
   ];
 
   theme?: Theme;
@@ -45,13 +44,17 @@ export class AppComponent implements OnInit {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = source;
-        link.onload = () => resolve();
+        link.onload = () => {
+          console.log('XXX LOAD');
+          resolve();
+        };
         link.onerror = () => reject();
         document.head.appendChild(link);
       });
     }
     else {
       return new Promise((resolve, reject) => {
+        console.log('XXX LOAD 2 ');
         resolve()
       });
     }
