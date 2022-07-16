@@ -5,6 +5,8 @@
 @mixin color($theme) {
 
   $config: theming.get-color-config($theme);
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
 
   $primary: map.get($config, primary);
   $accent: map.get($config, accent);
@@ -12,14 +14,32 @@
 
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
+  $checkbox-mark-color: theming.get-color-from-palette($background, background);
+
   .mat-checkbox-indeterminate,
   .mat-checkbox-checked {
+
+    .mat-checkbox-background {
+      background-color: theming.get-color-from-palette($foreground, secondary-text);
+    }
+    .mat-checkbox-checkmark {
+      fill: $checkbox-mark-color;
+    }
+    .mat-checkbox-checkmark-path {
+      stroke: $checkbox-mark-color !important;
+    }
+    .mat-checkbox-mixedmark {
+      background-color: $checkbox-mark-color;
+    }
 
     @each $key, $palette in ((primary, $primary), (accent, $accent), (warn, $warn)) {
       &[color=#{$key}],
       &.mat-#{$key} {
         .mat-checkbox-background {
           background-color: theming.get-color-from-palette($palette, default);
+        }
+        .mat-checkbox-checkmark {
+          fill: theming.get-color-from-palette($palette, default-contrast) !important;
         }
         .mat-checkbox-checkmark-path {
           stroke: theming.get-color-from-palette($palette, default-contrast) !important;
@@ -35,6 +55,9 @@
       &.mat-#{$key} {
         .mat-checkbox-background {
           background-color: theming.get-color-from-palette($palette, default);
+        }
+        .mat-checkbox-checkmark {
+          fill: theming.get-color-from-palette($palette, default-contrast) !important;
         }
         .mat-checkbox-checkmark-path {
           stroke: theming.get-color-from-palette($palette, default-contrast) !important;
@@ -66,6 +89,11 @@
   .mat-checkbox-label-before .mat-checkbox-label {
     padding-left: 0;
     padding-right: 8px;
+  }
+
+  .mat-checkbox-inner-container-no-side-margin + .mat-checkbox-label {
+    padding-left: 0;
+    padding-right: 0;
   }
 
 }

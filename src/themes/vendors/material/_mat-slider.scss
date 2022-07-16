@@ -30,9 +30,14 @@
 
 @mixin color($theme) {
 
+  $config: theming.get-color-config($theme);
+  $foreground: map.get($config, foreground);
+  $background: map.get($config, background);
+
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
 
   .mat-slider {
+
     @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {

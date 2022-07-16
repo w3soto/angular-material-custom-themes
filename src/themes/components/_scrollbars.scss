@@ -1,12 +1,22 @@
 ///////////////////////////////////////////////////////////////////////////////
 // SCROLLBARS
 ///////////////////////////////////////////////////////////////////////////////
+@use 'sass:map';
+@use '@angular/material' as theming;
 
 
 @mixin color($theme) {
 
-  $track-color: rgba(255, 255, 255, .1);
-  $thumb-color: rgba(255, 255, 255, .25);
+  $config: theming.get-color-config($theme);
+  $is-dark: map.get($config, is-dark);
+
+  $track-color: rgba(black, .08);
+  $thumb-color: rgba(black, .16);
+
+  @if $is-dark {
+    $track-color: rgba(black, .32);
+    $thumb-color: rgba(white, .16);
+  }
 
   // firefox
   * {
@@ -46,28 +56,7 @@
     border-radius: 6px;
   }
 
-  //.mat-drawer > *::-webkit-scrollbar {
-  //  width: $width/2;
-  //  height: $width/2;
-  //}
-
 }
-
-//body,
-//.mat-sidenav,
-//.mat-sidenav-content,
-//[class^=ag-] {
-//  scrollbar-width: auto !important;
-//  &::-webkit-scrollbar {
-//    width: $auto-width;
-//    height: $auto-width;
-//  }
-//  &::-webkit-scrollbar-thumb {
-//    background: $thumb-color;
-//    border-radius: 0px;
-//  }
-//}
-
 
 @mixin theme($theme) {
   @include color($theme);

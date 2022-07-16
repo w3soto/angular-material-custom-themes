@@ -11,9 +11,9 @@
       $contrast: map.get($palette, contrast);
       &[color=#{$key}],
       &.mat-#{$key} {
-        background-color: map.get($palette, main);
+        background-color: map.get($palette, default);
         @if $contrast {
-          color: map.get($contrast, main);
+          color: map.get($contrast, default);
         }
       }
     }

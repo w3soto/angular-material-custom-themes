@@ -1,0 +1,344 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+@use "abstracts";
+@use "components";
+@use "vendors/material";
+
+
+///////////////////////////////////////////////////////////////////////////////
+// TYPOGRAPHY
+///////////////////////////////////////////////////////////////////////////////
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+$typography: (
+  display-4: theming.define-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
+  display-3: theming.define-typography-level(56px, 56px, 400, 'Roboto', -0.0089em),
+  display-2: theming.define-typography-level(45px, 48px, 400, 'Roboto', 0.0000em),
+  display-1: theming.define-typography-level(24px, 24px, 400, 'Roboto', 0.0074em),
+  headline: theming.define-typography-level(20px, 32px, 400, 'Roboto', 0.0000em),
+  title: theming.define-typography-level(20px, 32px, 500, 'Roboto', 0.0075em),
+  subheading-2: theming.define-typography-level(16px, 28px, 400, 'Roboto', 0.0094em),
+  subheading-1: theming.define-typography-level(15px, 24px, 500, 'Roboto', 0.0067em),
+  body-2: theming.define-typography-level(14px, 24px, 500, 'Roboto', 0.0179em),
+  body-1: theming.define-typography-level(14px, 20px, 400, 'Roboto', 0.0179em),
+  button: theming.define-typography-level(14px, 14px, 500, 'Roboto', 0.0893em),
+  caption: theming.define-typography-level(12px, 20px, 400, 'Roboto', 0.0333em),
+  input: theming.define-typography-level(14px, 1.125, 400, 'Roboto', 0.0179em)
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// COLORS
+///////////////////////////////////////////////////////////////////////////////
+
+$light-base: white;
+$light-text: white;
+$light-primary-text: $light-text;
+$light-disabled-text: rgba($light-text, 0.32);
+$light-accent-text: #637ba9;
+$light-secondary-text: #637ba9;
+$light-hint-text: $light-disabled-text;
+$light-icons: #637ba9;
+$light-dividers: rgba($light-icons, .32);
+$light-elevation: black;
+$light-slider-min: $light-primary-text;
+$light-slider-off: rgba($light-accent-text, 0.24);
+$light-slider-off-active: $light-disabled-text;
+
+$dark-base: black;
+$dark-text: #516377;
+$dark-primary-text: $dark-text;
+$dark-disabled-text: rgba($dark-text, 0.32);
+$dark-accent-text: #637ba9;
+$dark-secondary-text: #637ba9;
+$dark-hint-text: $dark-disabled-text;
+$dark-icons: #637ba9;
+$dark-dividers: rgba($dark-icons, .32);
+$dark-elevation: $dark-text;
+$dark-slider-min: $dark-text;
+$dark-slider-off: rgba($dark-text, 0.24);
+$dark-slider-off-active: rgba($dark-text, 0.48);
+
+$light-bg: #F3F4F4;
+$light-bg-hover: darken($light-bg, 2%);
+$light-bg-status-bar: white;
+$light-bg-app-bar: white;
+$light-bg-card: white;
+$light-bg-dialog: white;
+$light-bg-tooltip: rgba(0,0,0,.48);
+$light-bg-disabled-button: rgba($light-bg, 0);
+$light-bg-raised-button: white;
+$light-bg-focused-button: darken($light-bg, 5%);
+$light-bg-selected-button: darken($light-bg, 10%);
+$light-bg-selected-disabled-button: rgba(darken($light-bg, 10%), .48);
+$light-bg-disabled-button-toggle: $light-bg-disabled-button;
+$light-bg-unselected-chip: darken($light-bg, 5%);
+$light-bg-disabled-list-option: $light-bg-disabled-button;
+
+$dark-bg: #1c222f;
+$dark-bg-hover: lighten($dark-bg, 2%);
+$dark-bg-status-bar: #283144;
+$dark-bg-app-bar: #283144;
+$dark-bg-card: #283144;
+$dark-bg-dialog: #283144;
+$dark-bg-tooltip: rgba(0,0,0,.48);
+$dark-bg-disabled-button: rgba($dark-bg, 0%);
+$dark-bg-raised-button: #283144;
+$dark-bg-focused-button: lighten($dark-bg, 5%);
+$dark-bg-selected-button: lighten($dark-bg, 10%);
+$dark-bg-selected-disabled-button: rgba(lighten($dark-bg, 10%), .48);
+$dark-bg-disabled-button-toggle: $dark-bg-disabled-button;
+$dark-bg-unselected-chip: lighten($dark-bg, 5%);
+$dark-bg-disabled-list-option: $dark-bg-disabled-button;
+
+
+// MAT COLORS
+$primary: (
+  default: #5a8dee,
+  lighter: #7ba4f1,
+  darker: #4d78ca,
+  200: #5a8dee, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$accent: (
+  default: #8B6CC0,
+  lighter: #9d83ca,
+  darker: #4d3479,
+  200: #8B6CC0, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$warn: (
+  default: #ff5b5c,
+  lighter: #ff7c7d,
+  darker: #d94d4e,
+  200: #ff5b5c, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+// CUSTOM COLORS
+$secondary: (
+  default: #69809a,
+  lighter: #8799ae,
+  darker: #596d83,
+  200: #69809a, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$info: (
+  default: #00cfdd,
+  lighter: #33d9e4,
+  darker: #00b0bc,
+  200: #00cfdd, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$success: (
+  default: #39da8a,
+  lighter: #61e1a1,
+  darker: #30b975,
+  200: #39da8a, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$caution: (
+  default: #fdac41,
+  lighter: #fdbd67,
+  darker: #d79237,
+  200: #fdac41, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// THEME CONFIG
+///////////////////////////////////////////////////////////////////////////////
+$light-theme: (
+  color: (
+    is-dark: false,
+    primary: theming.define-palette($primary, default, lighter, darker),
+    accent: theming.define-palette($accent, default, lighter, darker),
+    warn: theming.define-palette($warn, default, lighter, darker),
+    foreground: (
+      base:              $dark-base,
+      divider:           $dark-dividers,
+      dividers:          $dark-dividers,
+      disabled:          $dark-disabled-text,
+      disabled-button:   $dark-disabled-text,
+      disabled-text:     $dark-disabled-text,
+      elevation:         $dark-elevation,
+      secondary-text:    $dark-secondary-text,
+      accent-text:       $dark-accent-text,
+      hint-text:         $dark-hint-text,
+      icon:              $dark-icons,
+      icons:             $dark-icons,
+      text:              $dark-text,
+      slider-min:        $dark-slider-min,
+      slider-off:        $dark-slider-off,
+      slider-off-active: $dark-slider-off-active,
+    ),
+    background: (
+      background:               $light-bg,
+      status-bar:               $light-bg-status-bar,
+      app-bar:                  $light-bg-app-bar,
+      hover:                    $light-bg-hover,
+      card:                     $light-bg-card,
+      dialog:                   $light-bg-dialog,
+      tooltip:                  $light-bg-tooltip,
+      focused-button:           $light-bg-focused-button,
+      raised-button:            $light-bg-raised-button,
+      selected-button:          $light-bg-selected-button,
+      disabled-button:          $light-bg-disabled-button,
+      selected-disabled-button: $light-bg-selected-disabled-button,
+      disabled-button-toggle:   $light-bg-disabled-button-toggle,
+      unselected-chip:          $light-bg-unselected-chip,
+      disabled-list-option:     $light-bg-disabled-list-option,
+    ),
+  ),
+  density: null,
+  typography: $typography,
+  // custom config
+  custom: (
+    color: (
+      secondary: theming.define-palette($secondary, default, lighter, darker),
+      info: theming.define-palette($info, default, lighter, darker),
+      success: theming.define-palette($success, default, lighter, darker),
+      caution: theming.define-palette($caution, default, lighter, darker),
+    )
+  )
+);
+
+$dark-theme: (
+  color: (
+    is-dark: true,
+    primary: theming.define-palette($primary, default, lighter, darker),
+    accent: theming.define-palette($accent, default, lighter, darker),
+    warn: theming.define-palette($warn, default, lighter, darker),
+    foreground: (
+      base:              $light-base,
+      divider:           $light-dividers,
+      dividers:          $light-dividers,
+      disabled:          $light-disabled-text,
+      disabled-button:   $light-disabled-text,
+      disabled-text:     $light-disabled-text,
+      elevation:         $light-elevation,
+      secondary-text:    $light-secondary-text,
+      accent-text:       $light-accent-text,
+      hint-text:         $light-hint-text,
+      icon:              $light-icons,
+      icons:             $light-icons,
+      text:              $light-text,
+      slider-min:        $light-slider-min,
+      slider-off:        $light-slider-off,
+      slider-off-active: $light-slider-off-active
+    ),
+    background: (
+      background:               $dark-bg,
+      status-bar:               $dark-bg-status-bar,
+      app-bar:                  $dark-bg-app-bar,
+      hover:                    $dark-bg-hover,
+      card:                     $dark-bg-card,
+      dialog:                   $dark-bg-dialog,
+      tooltip:                  $dark-bg-tooltip,
+      focused-button:           $dark-bg-focused-button,
+      raised-button:            $dark-bg-raised-button,
+      selected-button:          $dark-bg-selected-button,
+      disabled-button:          $dark-bg-disabled-button,
+      selected-disabled-button: $dark-bg-selected-disabled-button,
+      disabled-button-toggle:   $dark-bg-disabled-button-toggle,
+      unselected-chip:          $dark-bg-unselected-chip,
+      disabled-list-option:     $dark-bg-disabled-list-option
+    ),
+  ),
+  density: null,
+  typography: $typography,
+  // custom config
+  custom: (
+    color: (
+      secondary: theming.define-palette($secondary, default, lighter, darker),
+      info: theming.define-palette($info, default, lighter, darker),
+      success: theming.define-palette($success, default, lighter, darker),
+      caution: theming.define-palette($caution, default, lighter, darker),
+    )
+  )
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// BUILD THEME
+///////////////////////////////////////////////////////////////////////////////
+@include theming.core($typography);
+
+.arc-light-theme {
+
+  @include abstracts.theme-variables($light-theme);
+
+  @include theming.all-component-themes($light-theme);
+  @include material.theme($light-theme);
+  @include components.theme($light-theme);
+
+  @include abstracts.theme-color-classes($light-theme);
+
+  font-size: 16px;
+  background-color: $light-bg;
+
+  a:not(.mat-button, .mat-list-item, .mat-tab-link),
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):hover,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):active,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):visited {
+    color: map.get($primary, default);
+  }
+
+}
+
+.arc-dark-theme {
+
+  @include abstracts.theme-variables($dark-theme);
+
+  @include theming.all-component-themes($dark-theme);
+  @include material.theme($dark-theme);
+  @include components.theme($dark-theme);
+
+  @include abstracts.theme-color-classes($dark-theme);
+
+  font-size: 16px;
+  background-color: $dark-bg;
+
+  a:not(.mat-button, .mat-list-item, .mat-tab-link),
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):hover,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):active,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):visited {
+    color: map.get($primary, default);
+  }
+
+}

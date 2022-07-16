@@ -1,0 +1,351 @@
+@use 'sass:map';
+@use '@angular/material' as theming;
+@use "abstracts";
+@use "components";
+@use "vendors/material";
+
+
+///////////////////////////////////////////////////////////////////////////////
+// TYPOGRAPHY
+///////////////////////////////////////////////////////////////////////////////
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+$typography: (
+  display-4: theming.define-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
+  display-3: theming.define-typography-level(56px, 56px, 400, 'Roboto', -0.0089em),
+  display-2: theming.define-typography-level(45px, 48px, 400, 'Roboto', 0.0000em),
+  display-1: theming.define-typography-level(24px, 24px, 400, 'Roboto', 0.0074em),
+  headline: theming.define-typography-level(20px, 32px, 400, 'Roboto', 0.0000em),
+  title: theming.define-typography-level(20px, 32px, 500, 'Roboto', 0.0075em),
+  subheading-2: theming.define-typography-level(16px, 28px, 400, 'Roboto', 0.0094em),
+  subheading-1: theming.define-typography-level(15px, 24px, 500, 'Roboto', 0.0067em),
+  body-2: theming.define-typography-level(14px, 24px, 500, 'Roboto', 0.0179em),
+  body-1: theming.define-typography-level(14px, 20px, 400, 'Roboto', 0.0179em),
+  button: theming.define-typography-level(14px, 14px, 500, 'Roboto', 0.0893em),
+  caption: theming.define-typography-level(12px, 20px, 400, 'Roboto', 0.0333em),
+  input: theming.define-typography-level(14px, 1.125, 400, 'Roboto', 0.0179em)
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// COLORS
+///////////////////////////////////////////////////////////////////////////////
+$background-dark: #02081F;
+$background-light: #121525;
+$background-gradient: linear-gradient($background-dark, $background-light);
+
+$dark-text: #75799D;
+$dark-primary-text: $dark-text;
+
+$light-text: white;
+$light-primary-text: $light-text;
+
+// MAT COLORS
+$primary: (
+  default: #0075E3,
+  lighter: #0075E3,
+  darker: #0075E3,
+  200: #0075E3, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$accent: (
+  default: #0075E3,
+  lighter: #0075E3,
+  darker: #0075E3,
+  200: #0075E3, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$warn: (
+  default: #c9252d,
+  lighter: #c9252d,
+  darker: #c9252d,
+  200: #c9252d, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+// CUSTOM COLORS
+$secondary: (
+  default: #69809a,
+  lighter: #8799ae,
+  darker: #596d83,
+  200: #69809a, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$info: (
+  default: #00cfdd,
+  lighter: #33d9e4,
+  darker: #00b0bc,
+  200: #00cfdd, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$success: (
+  default: #128012,
+  lighter: #128012,
+  darker: #128012,
+  200: #128012, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$caution: (
+  default: #fdac41,
+  lighter: #fdbd67,
+  darker: #d79237,
+  200: #fdac41, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+// S4 COLORS
+$candidate: (
+  default: #8CD921,
+  lighter: #8CD921,
+  darker: #8CD921,
+  200: #8CD921, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$contact: (
+  default: #FFCA00,
+  lighter: #FFCA00,
+  darker: #FFCA00,
+  200: #FFCA00, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$client: (
+  default: #5D42C1,
+  lighter: #5D42C1,
+  darker: #5D42C1,
+  200: #5D42C1, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$job: (
+  default: #F5325C,
+  lighter: #F5325C,
+  darker: #F5325C,
+  200: #F5325C, // For slide toggle,
+  contrast : (
+    default: $light-primary-text,
+    lighter: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+// FOREGROUND COLORS
+
+// Dark Theme text
+$light-text: white;
+$light-primary-text: $light-text;
+$light-accent-text: #75799D;
+$light-disabled-text: rgba($light-accent-text, 0.5);
+$light-dividers: #75799D;
+$light-focused: #75799D;
+
+$foreground: (
+  base:              black,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   $light-disabled-text,
+  disabled-text:     $light-disabled-text,
+  elevation:         black,
+  hint-text:         $light-accent-text,
+  secondary-text:    $light-accent-text,
+  accent-text:       $light-accent-text,
+  icon:              $light-accent-text,
+  icons:             $light-accent-text,
+  text:              $light-text,
+  slider-min:        $light-accent-text,
+  slider-off:        rgba($light-accent-text, 0.3),
+  slider-off-active: rgba($light-accent-text, 0.3),
+);
+
+// BACKGROUND COLORS
+
+// Dark bg
+$dark-background:     #02081F;
+$dark-bg-lighter-5:   #181C32;
+$dark-bg-lighter-10:  #181C32;
+$dark-bg-lighter-20:  #75799D; //#181C32;
+$dark-bg-lighter-30:  #181C32;
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$background: (
+  background:               $dark-background,
+  status-bar:               $dark-bg-lighter-20,
+  app-bar:                  $dark-bg-lighter-5,
+  hover:                    $light-bg-alpha-4,
+  card:                     $dark-bg-lighter-5,
+  dialog:                   $dark-bg-lighter-5,
+  tooltip:                  rgba(0,0,0,.48),
+  disabled-button:          $light-bg-alpha-12,
+  raised-button:            $dark-bg-lighter-5,
+  focused-button:           $light-focused,
+  selected-button:          $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle:   $dark-bg-lighter-10,
+  unselected-chip:          $dark-bg-lighter-20,
+  disabled-list-option:     $dark-bg-lighter-10,
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// THEME CONFIG
+///////////////////////////////////////////////////////////////////////////////
+$theme: (
+  color: (
+    is-dark: true,
+    primary: theming.define-palette($primary, default, lighter, darker),
+    accent: theming.define-palette($accent, default, lighter, darker),
+    warn: theming.define-palette($warn, default, lighter, darker),
+    foreground: $foreground,
+    background: $background,
+  ),
+  density: null,
+  typography: $typography,
+  // custom config
+  custom: (
+    color: (
+      secondary: theming.define-palette($secondary, default, lighter, darker),
+      info: theming.define-palette($info, default, lighter, darker),
+      success: theming.define-palette($success, default, lighter, darker),
+      caution: theming.define-palette($caution, default, lighter, darker),
+      // s4
+      candidate: theming.define-palette($candidate, default, lighter, darker),
+      contact: theming.define-palette($contact, default, lighter, darker),
+      client:theming.define-palette($client, default, lighter, darker),
+      job: theming.define-palette($job, default, lighter, darker),
+    )
+  )
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// BUILD THEME
+///////////////////////////////////////////////////////////////////////////////
+@include theming.core($typography);
+
+:root {
+  @include abstracts.theme-variables($theme);
+}
+
+.hireme-theme {
+
+  @include theming.all-component-themes($theme);
+  @include material.theme($theme);
+  @include components.theme($theme);
+
+  @include abstracts.theme-color-classes($theme);
+
+  background: $background-gradient;
+
+  a:not(.mat-button, .mat-list-item, .mat-tab-link),
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):hover,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):active,
+  a:not(.mat-button, .mat-list-item, .mat-tab-link):visited {
+    color: map.get($primary, default);
+  }
+
+  // drawer
+  .mat-drawer-container {
+    background-color: transparent;
+  }
+
+  // button
+  .mat-flat-button,
+  .mat-raised-button,
+  .mat-stroked-button {
+    border-radius: 8px;
+  }
+  .mat-icon-button {
+    border-radius: 50%;
+  }
+
+  // card
+  .mat-card {
+    border-radius: 8px;
+  }
+
+  // form field
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end,
+    .mat-form-field-outline-gap {
+      border-width: 1px;
+    }
+  }
+
+  .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex .mat-form-field-outline-thick {
+    opacity: 1;
+  }
+
+  .mat-form-field-appearance-standard,
+  .mat-form-field-appearance-fill,
+  .mat-form-field-appearance-legacy {
+    .mat-form-field-ripple {
+      height: 1px;
+    }
+  }
+
+  .mat-form-field .mat-icon {
+    color: map.get($foreground, icon);
+  }
+
+  // form field outline-fill
+  .mat-form-field-appearance-outline[outline-fill] {
+    .mat-form-field-outline {
+      > * {
+        overflow: hidden;
+        background-color: map.get($background, card);
+        border-color: map.get($background, card);
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use "_scrollbars";
+
+@mixin theme($theme) {
+
+  @include scrollbars.theme($theme);
+
+}

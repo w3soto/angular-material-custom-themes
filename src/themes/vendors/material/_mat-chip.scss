@@ -21,17 +21,17 @@
   .mat-form-field .mat-chip.mat-standard-chip {
     &[color=primary],
     &.mat-primary {
-      color: map.get($primary-contrast, main);
+      color: map.get($primary-contrast, default);
       background-color: theming.get-color-from-palette($primary);
     }
     &[color=accent],
     &.mat-accent {
-      color: map.get($accent-contrast, main);
+      color: map.get($accent-contrast, default);
       background-color: theming.get-color-from-palette($accent);
     }
     &[color=warn],
     &.mat-warn {
-      color: map.get($warn-contrast, main);
+      color: map.get($warn-contrast, default);
       background-color: theming.get-color-from-palette($warn);
     }
   }
@@ -42,7 +42,7 @@
       $contrast: map.get($palette, contrast);
       &[color=#{$key}],
       &.mat-#{$key} {
-        color: map.get($contrast, main);
+        color: map.get($contrast, default);
         background-color: theming.get-color-from-palette($palette);
       }
     }

@@ -2,7 +2,7 @@
 @use '@angular/material' as theming;
 
 
-@mixin _export_palette_vars($name, $palette) {
+@mixin _palette-variables($name, $palette) {
   @each $variant in (main, lighter, darker) {
     --#{$name}-#{$variant}-color:  #{map.get($palette, $variant)};
     --#{$name}-#{$variant}-text-color:  #{map.get(map.get($palette, contrast), $variant)};
@@ -10,7 +10,7 @@
 }
 
 
-@mixin export_theme_colors_vars($theme) {
+@mixin theme-variables($theme) {
 
   $config: theming.get-color-config($theme);
   $is-dark-theme: map.get($config, is-dark);
@@ -46,19 +46,93 @@
 
   // built-in colors
   @each $name, $palette in (primary: $primary, accent: $accent, warn: $warn) {
-    @include _export_palette_vars($name, $palette);
+    @include _palette-variables($name, $palette);
   }
 
   // custom colors
   @each $name, $palette in $custom-palettes {
-    @include _export_palette_vars($name, $palette);
+    @include _palette-variables($name, $palette);
   }
 
 }
 
-@mixin theme_colors($theme) {
+
+/*
+
+  Generate text and background color classes from palette
+
+ .text-NAME { ... }
+ .text-NAME-lighter { ... }
+ .text-NAME-darker { ... }
+
+ .bg-NAME { ... }
+ .bg-NAME-lighter { ... }
+ .bg-NAME-darker { ... }
+
+ */
+@mixin _color_classes-from-palette($name, $palette) {
+
+  @each $hue in (default, lighter, darker) {
+
+    $suffix: -#{$hue};
+    @if $hue == default {
+      $suffix: '';
+    }
+
+    .text-#{$name}#{$suffix} {
+      color: map.get($palette, $hue) !important;
+    }
+
+    .text-#{$name}#{$suffix}-contrast {
+      $contrast: map.get($palette, contast);
+      @if $contrast {
+        color: map.get($contrast, $hue) !important;
+      }
+      @else if map.get($palette, #{$hue}-contrast) {
+        color: map.get($palette, #{$hue}-contrast) !important;
+      }
+    }
+
+    .bg-#{$name}#{$suffix} {
+      background-color: map.get($palette, $hue) !important;
+    }
+
+  }
+
 }
 
 
-@mixin scrollbar($width) {}
+/*
+
+  Generate text and background color classes from theme colors
+
+  Example:
+    .text-primary {}
+    .bg-primary {}
+
+ */
+@mixin theme-color-classes($theme) {
+
+  $config: theming.get-color-config($theme);
+
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
+
+  // mat colors
+  @each $name, $palette in (primary: $primary, accent: $accent, warn: $warn) {
+    @include _color_classes-from-palette($name, $palette);
+  }
+
+  $custom-palettes: theming.get-color-config(map.get($theme, custom));
+
+  // custom colors
+  @each $name, $palette in $custom-palettes {
+    @include _color_classes-from-palette($name, $palette);
+  }
+
+  // foreground colors
+
+  // background colors
+}
 

@@ -4,23 +4,30 @@
 
 @mixin color($theme) {
 
+  $config: theming.get-color-config($theme);
+  $foreground: map.get($config, foreground);
+
   $custom-config: map.get($theme, custom);
   $custom-colors: map.get($custom-config, colors);
 
   $custom-palettes: theming.get-color-config(map.get($theme, custom));
+
+  .mat-radio-inner-circle {
+    background-color: theming.get-color-from-palette($foreground, secondary-text);
+  }
 
   .mat-radio-button {
     @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {
         &.mat-radio-checked .mat-radio-outer-circle {
-          border-color: map.get($palette, main) !important;
+          border-color: map.get($palette, default) !important;
         }
         .mat-radio-inner-circle,
         .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
         &.mat-radio-checked .mat-radio-persistent-ripple,
         &:active .mat-radio-persistent-ripple {
-          background-color: map.get($palette, main) !important;
+          background-color: map.get($palette, default) !important;
         }
       }
     }

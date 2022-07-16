@@ -5,21 +5,19 @@
 
 @mixin _button-color($palette) {
 
-  $contrast: map.get($palette, contrast);
-
-  color: map.get($palette, main);
+  color: theming.get-color-from-palette($palette);
   .mat-button-toggle-button {
-    color: map.get($palette, main);
+    color: theming.get-color-from-palette($palette);
   }
   // focus
   .mat-button-toggle-focus-overlay {
-    background-color: map.get($palette, main);
+    background-color: theming.get-color-from-palette($palette);
   }
 
   &.mat-button-toggle-checked {
     .mat-button-toggle-button {
-      color: map.get($contrast, main);
-      background-color: map.get($palette, main);
+      color: theming.get-color-from-palette($palette, default-contrast);
+      background-color: theming.get-color-from-palette($palette);
     }
   }
 
@@ -114,14 +112,23 @@
 
 
 @mixin typography($theme) {
-  .mat-button-toggle-label-content {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+
+  .mat-button-toggle-group {
+    .mat-button-toggle-button {
+      height: 100%;
+    }
+    .mat-button-toggle-label-content {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      //height: 100%;
+    }
   }
+
   .mat-button-toggle-group .mat-button-toggle-label-content {
     line-height: 40px;
   }
+
   .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
     line-height: 38px;
   }

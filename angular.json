@@ -32,24 +32,14 @@
             ],
             "styles": [
               {
-                "input": "src/themes/arc/arc-light.theme.scss",
-                "bundleName": "arc-light-theme",
+                "input": "src/themes/hireme.theme.scss",
+                "bundleName": "hireme-theme",
                 "inject": false
               },
               {
-                "input": "src/themes/arc/arc-dark.theme.scss",
-                "bundleName": "arc-dark-theme",
-                "inject": false
-              },
-              {
-                "input": "src/themes/transparent/transparent-light.theme.scss",
-                "bundleName": "transparent-light-theme",
-                "inject": false
-              },
-              {
-                "input": "src/themes/transparent/transparent-dark.theme.scss",
-                "bundleName": "transparent-dark-theme",
-                "inject": false
+                "input": "src/themes/arc.theme.scss",
+                "bundleName": "arc-theme",
+                "inject": true
               },
               "src/styles.scss"
             ],
@@ -61,7 +51,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

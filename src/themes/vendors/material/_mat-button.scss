@@ -22,7 +22,7 @@
     @each $key, $palette in $custom-palettes {
       &[color=#{$key}],
       &.mat-#{$key} {
-        color: map.get($palette, main);
+        color: theming.get-color-from-palette($palette);
         // focus
         .mat-button-focus-overlay {
           background-color: theming.get-color-from-palette($palette);
@@ -36,12 +36,12 @@
   .mat-fab,
   .mat-mini-fab {
     @each $key, $palette in $custom-palettes {
-      $contrast: map.get($palette, contrast);
+      $contrast: theming.get-color-from-palette($palette, default-contrast);
       &[color=#{$key}],
       &.mat-#{$key} {
-        background-color: map.get($palette, main);
+        background-color: theming.get-color-from-palette($palette);
         @if $contrast {
-          color: map.get($contrast, main);
+          color: $contrast;
         }
         // ripple
         .mat-ripple-element {

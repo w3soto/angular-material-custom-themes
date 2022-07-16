@@ -1,7 +1,5 @@
 @use 'sass:map';
 @use '@angular/material' as theming;
-//@use "@angular/material/core/style/list-common";
-//@use "@angular/material/core/typography/typography-utils";
 
 
 @mixin color($theme) {
@@ -9,7 +7,6 @@
 
 
 @mixin typography($theme) {
-
 }
 
 
@@ -44,8 +41,12 @@
       }
       .mat-list-option {
         font-size: map.get($subheading2, font-size);
+      }
+
+      .mat-list-option {
         height: map.get($config, size);
       }
+
       .mat-subheader {
         font-size: map.get($body2, font-size);
         height: map.get($config, size);

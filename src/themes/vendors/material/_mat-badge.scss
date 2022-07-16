@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '@angular/material' as theming;
+  @use '@angular/material' as theming;
 
 
 @mixin color($theme) {
@@ -8,13 +8,15 @@
 
   .mat-badge {
     @each $key, $palette in $custom-palettes {
-      $contrast: map.get($palette, contrast);
       &-#{$key} {
         .mat-badge-content {
-          background-color: map.get($palette, main);
+          background-color: theming.get-color-from-palette($palette);
+
+          $contrast: theming.get-color-from-palette($palette, default-contrast);
           @if $contrast {
-            color: map.get($contrast, main);
+            color: $contrast;
           }
+
         }
       }
     }
