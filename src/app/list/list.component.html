@@ -14,16 +14,27 @@
 
       <div class="caption">List</div>
       <mat-list>
-        <mat-list-item> Pepper </mat-list-item>
-        <mat-list-item> Salt </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
+        <mat-list-item
+          *ngFor="let item of items"
+          [disabled]="item.disabled">{{ item.name }}</mat-list-item>
       </mat-list>
 
       <div class="caption">Action list</div>
       <mat-action-list>
-        <button mat-list-item><mat-icon>done</mat-icon>Save</button>
-        <button mat-list-item><mat-icon>undo</mat-icon>Undo</button>
+        <button
+          *ngFor="let action of actions"
+          mat-list-item
+          [disabled]="action.disabled"><mat-icon>{{ action.icon }}</mat-icon>{{ action.name }}</button>
       </mat-action-list>
+
+      <div class="caption">Selection list</div>
+      <mat-selection-list>
+        <mat-list-option
+          *ngFor="let item of items"
+          [disabled]="item.disabled">
+          {{ item.name }}
+        </mat-list-option>
+      </mat-selection-list>
 
     </mat-card-content>
   </mat-card>
@@ -34,16 +45,27 @@
 
       <div class="caption">List</div>
       <mat-list dense>
-        <mat-list-item> Pepper </mat-list-item>
-        <mat-list-item> Salt </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
+        <mat-list-item
+          *ngFor="let item of items"
+          [disabled]="item.disabled">{{ item.name }}</mat-list-item>
       </mat-list>
 
       <div class="caption">Action list</div>
       <mat-action-list dense>
-        <button mat-list-item><mat-icon mat-list-icon>done</mat-icon>Save</button>
-        <button mat-list-item><mat-icon mat-list-icon>undo</mat-icon>Undo</button>
+        <button
+          *ngFor="let action of actions"
+          mat-list-item
+          [disabled]="action.disabled"><mat-icon>{{ action.icon }}</mat-icon>{{ action.name }}</button>
       </mat-action-list>
+
+      <div class="caption">Selection list</div>
+      <mat-selection-list dense>
+        <mat-list-option
+          *ngFor="let item of items"
+          [disabled]="item.disabled">
+          {{ item.name }}
+        </mat-list-option>
+      </mat-selection-list>
 
     </mat-card-content>
   </mat-card>
@@ -54,16 +76,27 @@
 
       <div class="caption">List</div>
       <mat-list compact>
-        <mat-list-item> Pepper </mat-list-item>
-        <mat-list-item> Salt </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
+        <mat-list-item
+          *ngFor="let item of items"
+          [disabled]="item.disabled">{{ item.name }}</mat-list-item>
       </mat-list>
 
       <div class="caption">Action list</div>
       <mat-action-list compact>
-        <button mat-list-item><mat-icon mat-list-icon>done</mat-icon>Save</button>
-        <button mat-list-item><mat-icon mat-list-icon>undo</mat-icon>Undo</button>
+        <button
+          *ngFor="let action of actions"
+          mat-list-item
+          [disabled]="action.disabled"><mat-icon>{{ action.icon }}</mat-icon>{{ action.name }}</button>
       </mat-action-list>
+
+      <div class="caption">Selection list</div>
+      <mat-selection-list compact>
+        <mat-list-option
+          *ngFor="let item of items"
+          [disabled]="item.disabled">
+          {{ item.name }}
+        </mat-list-option>
+      </mat-selection-list>
 
     </mat-card-content>
   </mat-card>
