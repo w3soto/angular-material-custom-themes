@@ -39,7 +39,7 @@
               {
                 "input": "src/themes/arc.theme.scss",
                 "bundleName": "arc-theme",
-                "inject": true
+                "inject": false
               },
               "src/styles.scss"
             ],
