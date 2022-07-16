@@ -24,7 +24,7 @@
     <mat-card-title>{{ a | titlecase }}</mat-card-title>
     <mat-card-content>
 
-      <mat-form-field [appearance]="$any(a)">
+      <mat-form-field [appearance]="$any(a)" inner>
         <mat-label>Required input</mat-label>
         <input matInput [formControl]="$any(form.controls[a])" placeholder="Required input">
         <mat-icon matPrefix>shopping_cart</mat-icon>
@@ -58,7 +58,7 @@
 
     <mat-card-subtitle>Dense variant</mat-card-subtitle>
     <mat-card-content>
-      <mat-form-field [appearance]="$any(a)" dense hide-subscript>
+      <mat-form-field [appearance]="$any(a)" dense inner hide-subscript>
         <mat-label>Default input</mat-label>
         <input matInput placeholder="Default input">
         <mat-icon matPrefix>shopping_cart</mat-icon>
