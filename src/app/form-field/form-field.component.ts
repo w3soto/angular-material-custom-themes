@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ALL_COLORS, CUSTOM_COLORS, MAT_COLORS } from "../confg";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 
 interface Food {
   value: string;
@@ -18,7 +18,7 @@ export class FormFieldComponent implements OnInit {
   customColors: string[] = CUSTOM_COLORS;
   allColors: string[] = ALL_COLORS;
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
@@ -27,7 +27,7 @@ export class FormFieldComponent implements OnInit {
   ];
 
   constructor(
-    private _fb: FormBuilder
+    private _fb: UntypedFormBuilder
   ) {
   }
 

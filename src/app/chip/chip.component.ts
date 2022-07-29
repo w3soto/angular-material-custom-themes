@@ -4,7 +4,7 @@ import { MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { map, startWith } from "rxjs/operators";
 import { Observable } from "rxjs";
-import { FormControl } from "@angular/forms";
+import { UntypedFormControl } from "@angular/forms";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
 
 @Component({
@@ -19,7 +19,7 @@ export class ChipComponent {
   allColors: string[] = ALL_COLORS;
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruitCtrl = new FormControl();
+  fruitCtrl = new UntypedFormControl();
   filteredFruits: Observable<string[]>;
   fruits: string[] = ['Apple', 'Lemon'];
   allFruits: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];

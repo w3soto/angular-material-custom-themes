@@ -68,12 +68,12 @@ export class AppComponent implements OnInit {
 
   selectTheme(theme: Theme) {
 
-    const transition = 200;
+    const transition = 400;
 
     document.body.style.transition = "opacity " + transition + "ms";
     document.body.style.opacity = "0";
 
-      setTimeout(() => {
+    setTimeout(() => {
 
       this.loadTheme(theme.source).then(() => {
         this.themes.forEach(t => {
